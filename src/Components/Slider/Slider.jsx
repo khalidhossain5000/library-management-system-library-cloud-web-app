@@ -13,6 +13,7 @@ const Slider = () => {
   return (
     <div className="">
       <Swiper
+      
         modules={[Navigation, Autoplay]}
         spaceBetween={50}
         slidesPerView={1}
