@@ -1,19 +1,79 @@
 import React from "react";
 import { NavLink } from "react-router";
+import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
 
 const NavBar = () => {
-    const links=<>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/'>All Books (p)</NavLink></li>
-        <li><NavLink to='/'>Add Book (p)</NavLink></li>
-        <li><NavLink to='/'>Borrowed Book (p)</NavLink></li>
-        <li><NavLink to='/'>Login (c)</NavLink></li>
-        <li><NavLink to='/'>Register (c)</NavLink></li>
+  const { user ,logOutUser} = useAuth();
 
+
+  const handleLogOut=()=>{
+      logOutUser()
+      .then(()=>{
+        toast.success(`Log Out Successfull`, {
+            className: "w-[300px] h-[100px] text-xl font-bold ",
+            removeDelay: 1000,
+            iconTheme: {
+              primary: "#16061e",
+              secondary: "#ef54e2",
+            },
+            style: {
+              border: "1px solid black",
+              color: "white",
+              backgroundImage:
+                "linear-gradient(to bottom right,#4B5563,#9333EA, #3B82F6)",
+            },
+          });
+      })
+      
+    }
+      const links = (
+    <>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/">All Books (p)</NavLink>
+      </li>
+      <li>
+        <NavLink to="/">Add Book (p)</NavLink>
+      </li>
+      <li>
+        <NavLink to="/">Borrowed Book (p)</NavLink>
+      </li>
+
+      {user ? (
+        <> 
+          <div
+            className="tooltip tooltip-bottom"
+            data-tip={`${user.displayName}`}
+          >
+            <img
+              className="w-16 h-16 rounded-full cursor-pointer"
+              src={user.photoURL}
+              alt=""
+            />
+          </div> 
+          <button onClick={handleLogOut} className="btn btn-warning text-black font-bold ">
+            Sign Out
+          </button>
+        </>
+      ) : (
+        <>
+          
+          <li>
+            <NavLink to="/login">Login (c)</NavLink>
+          </li>
+          <li>
+            <NavLink to="/register">Register (c)</NavLink>
+          </li>
+        </>
+      )}
     </>
+  );
   return (
-     <div className="text-white w-full bg-gradient-to-r from-[#160621] via-[#5c05ac] to-[#be185d] ">
-      <div className="navbar container mx-auto ">
+    <div className="text-black w-full bg-gradient-to-r from-[#ffffff] to-[#e0f7ff] py-1 ">
+      <div className="navbar container mx-auto items-center">
         <div className="flex items-center justify-between w-full lg:navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,35 +97,6 @@ const NavBar = () => {
               className="menu menu-sm dropdown-content bg-gray-800 rounded-box z-1 mt-3 w-52 text-white p-2 shadow"
             >
               {links}
-              {/* { (
-                <div className="">
-                  <div
-                    className="tooltip tooltip-bottom"
-                    data-tip={`${user.displayName}`}
-                  >
-                    <img
-                      className="w-12 h-12 rounded-full cursor-pointer"
-                      src={user.photoURL}
-                      alt=""
-                    />
-                  </div>
-                  <button
-                    onClick={handleLogOut}
-                    className="mt-12 btn bg-gradient-to-t from-[#b80af5] via-[#55077a] to-[#1e0630] text-pink-100 hover:shadow-2xl hover:shadow-purple-200 cursor-pointer border-1 border-pink-500  hover:bg-pink-700 hover:text-white"
-                  >
-                    Log Out
-                  </button>
-                </div>
-              ) (
-                <div className="">
-                  <li>
-                    <NavLink to="/auth/register">Register</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/auth/login">Login</NavLink>
-                  </li>
-                </div>
-              )} */}
             </ul>
           </div>
           <div>
@@ -73,39 +104,7 @@ const NavBar = () => {
           </div>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="flex items-center gap-5 px-1 font-bold">
-            {links}
-
-            {/* {user ? (
-              <div className="flex items-center gap-3">
-                <div
-                  className="tooltip tooltip-bottom"
-                  data-tip={`${user.displayName}`}
-                >
-                  <img
-                    className="w-22 h-22 rounded-full cursor-pointer"
-                    src={user.photoURL}
-                    alt=""
-                  />
-                </div>
-                <button
-                  onClick={handleLogOut}
-                  className="mt-3 btn bg-gradient-to-t from-[#b80af5] via-[#55077a] to-[#1e0630] text-pink-100 hover:shadow-2xl hover:shadow-purple-200 cursor-pointer border-1 border-pink-500 px-2  hover:bg-pink-700 hover:text-white"
-                >
-                  Log Out
-                </button>
-              </div>
-            ) : (
-              <div className="flex items-center gap-3">
-                <li>
-                  <NavLink to="/auth/register">Register(C)</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/auth/login">Login(C)</NavLink>
-                </li>
-              </div>
-            )} */}
-          </ul>
+          <ul className="flex items-center gap-5 px-1 font-bold">{links}</ul>
         </div>
       </div>
     </div>
