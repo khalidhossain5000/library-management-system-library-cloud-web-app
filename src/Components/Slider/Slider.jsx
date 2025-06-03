@@ -1,0 +1,96 @@
+import React from "react";
+import sliderImg1 from "../../assets/SliderImg/img-i.jpg";
+import sliderImg2 from "../../assets/SliderImg/img-ii.jpg";
+import sliderImg3 from "../../assets/SliderImg/slider-img.jpg";
+// import Swiper core and required modules
+import { Navigation, Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/navigation";
+const Slider = () => {
+  return (
+    <div className="">
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation
+        loop={true}
+        autoplay={{ delay: 5000 }}
+        // onSlideChange={() => console.log("slide change")}
+        // onSwiper={(swiper) => console.log(swiper)}
+      >
+        {/* slider -1 */}
+        <SwiperSlide>
+          <div className="relative h-[100vh] w-full">
+            <img
+              className="w-full h-[100vh] lg:max-h-[100vh]"
+              src={sliderImg2}
+              alt=""
+            />
+            {/* text and black overlay */}
+            <div className="absolute inset-0 bg-[#0000008b] flex flex-col justify-center items-center text-center p-6">
+              
+                <h2 className="lg:text-6xl font-bold text-[#feecff]">
+                  Welcome To HobbyNest:A Local Hobby Group Organzier
+                </h2>
+              
+              <h5 className="lg:text-xl font-medium text-[#fef0ff] w-full lg:w-6/12 mx-auto mt-9">
+                HobbyNest is a platform where people can discover and join local
+                hobby-based groups or create their own. It encourages social engagement through shared interests, helping people building communities around their passions.
+              </h5>
+            </div>
+          </div>
+        </SwiperSlide>
+        {/* slider - 2 */}
+        <SwiperSlide>
+          <div className="relative h-[100vh] w-full">
+            <img
+              className="w-full h-[100vh] lg:max-h-[100vh]"
+              src={sliderImg3}
+              alt=""
+            />
+            {/* text and black overlay */}
+            <div className="absolute inset-0 bg-[#0000008b] flex flex-col justify-center items-center text-center p-6">
+              
+                <h2 className="lg:text-6xl font-bold text-[#fef0ff]">
+                  Turn Your Hobbies Into FriendShip!
+                </h2>
+              
+              <h5 className="lg:text-xl font-medium text-[#fef0ff] w-full lg:w-6/12 mx-auto mt-9">
+                Using our website you can create your hobbie group and find your
+                related passion people.We are helping people building communities around their passions.
+              </h5>
+            </div>
+          </div>
+        </SwiperSlide>
+        {/* slider - 3 */}
+        <SwiperSlide>
+          <div className="relative h-[100vh] w-full">
+            <img
+              className="w-full h-[100vh] lg:max-h-[100vh]"
+              src={sliderImg1}
+              alt=""
+            />
+            {/* text and black overlay */}
+            <div className="absolute inset-0 bg-[#0000008b] flex flex-col justify-center items-center text-center p-6">
+              
+                <h2 className="lg:text-6xl font-bold text-[#feecff]">
+                  Your Next Hobbie Adventure Start Here With Us
+                </h2>
+           
+              <h5 className="lg:text-xl font-medium text-[#fef0ff] w-full lg:w-6/12 mx-auto mt-9">
+                Create account and join our website and find your hobbie realted
+                people and start your next adventure.We are encouraging social engagement through shared interests.So Start Today!
+              </h5>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
+  );
+};
+
+export default Slider;
