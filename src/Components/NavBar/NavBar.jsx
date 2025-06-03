@@ -33,13 +33,13 @@ const NavBar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/">All Books (p)</NavLink>
+        <NavLink to="/all-books">All Books (p)</NavLink>
       </li>
       <li>
-        <NavLink to="/">Add Book (p)</NavLink>
+        <NavLink to="/add-books">Add Book (p)</NavLink>
       </li>
       <li>
-        <NavLink to="/">Borrowed Book (p)</NavLink>
+        <NavLink to="/borrowed-books">Borrowed Book (p)</NavLink>
       </li>
 
       {user ? (
