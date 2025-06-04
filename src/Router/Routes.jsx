@@ -7,6 +7,7 @@ import PrivateRoute from "../Routes/PrivateRoute";
 import AllBooks from "../Pages/AllBooks/AllBooks";
 import AddBook from "../Pages/AddBook/AddBook";
 import BorrowedBooks from "../Pages/BorrowedBook/BorrowedBooks";
+import BookCategory from "../Pages/BookCategory/BookCategory";
 
 export const router=createBrowserRouter([
     {
@@ -28,6 +29,10 @@ export const router=createBrowserRouter([
             {
                 path:'borrowed-books',
                 element:<PrivateRoute><BorrowedBooks></BorrowedBooks></PrivateRoute>
+            },
+            {
+                path:'book-categories',
+                Component:BookCategory
             },
             {
                 path:'login',
