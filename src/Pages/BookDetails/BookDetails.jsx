@@ -102,7 +102,8 @@ const BookDetails = () => {
         <div className="text-center">
           <button
             onClick={openModal}
-            className="w-9/12 mt-6 btn btn-info text-black font-bold "
+            className={`w-9/12 mt-6 btn btn-info text-black font-bold `}
+            disabled={quantity<=0}
           >
             Borrow
           </button>
@@ -141,7 +142,7 @@ const BookDetails = () => {
         />
         <input className="input bg-pink-500 text-white font-bold rounded-2xl w-9/12 mx-auto flex justify-center" type="text" name="" defaultValue={user?.displayName} readOnly/>
         <input className="input bg-pink-500 text-white font-bold rounded-2xl w-9/12 mx-auto flex justify-center" type="email" name="" defaultValue={user?.email} readOnly />
-        <input onClick={handleBorrowBook} type="submit" value="Submit" className="btn btn-success font-bold text-black text-2xl" />
+        <input disabled={quantity<=0} onClick={handleBorrowBook} type="submit" value="Submit" className={`btn btn-success font-bold text-black text-2xl `} />
       </Modal>
 
       {/* modal end */}
