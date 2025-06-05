@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 const CategoryCard = ({singleBook}) => {
     const {
+      _id,
   title,
   imageUrl,
   quantity,
@@ -21,7 +22,7 @@ const CategoryCard = ({singleBook}) => {
             <h2>Category: {category}</h2>
             <h5>Quantity : {quantity}</h5>
             <h5>Rating : {rating}</h5> 
-            <Link className='btn btn-success font-bold text-black'>View Details</Link>
+            <Link to={`/all-books/${_id}`} className='btn btn-success font-bold text-black'>View Details</Link>
         </div>
     );
 };
