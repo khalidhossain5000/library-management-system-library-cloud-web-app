@@ -7,7 +7,10 @@ const BookCategory = () => {
     const {name}=useParams()
     const allBooks=useLoaderData()
     
-    const categoryBooks=allBooks.filter((book)=>book.category.toLowerCase() === name)
+
+    const categoryBooks=allBooks.filter((book)=>book?.category?.toLowerCase() === name)
+   
+    
     
     return (
         <div className='py-12 lg:py-24'>

@@ -10,6 +10,11 @@ const AddBook = () => {
     const form=e.target;
     const formData=new FormData(form);
     const data=Object.fromEntries(formData.entries())
+    data.quantity=parseInt(data.quantity)
+    
+    
+
+    console.log(data);
     //data sending to db
     axios.post('http://localhost:3000/books',data)
     .then((res)=>{
@@ -79,6 +84,7 @@ const AddBook = () => {
                 </label>
                 <input
                   type="number"
+                  
                   name="quantity"
                   className="input w-full shadow-2xl bg-white/10 backdrop-blur-sm text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
                   placeholder="Max Members"
@@ -140,6 +146,7 @@ const AddBook = () => {
                 </label>
                 <input
                   type="number"
+                  max='5'
                   name="rating"
                   className="input w-full shadow-2xl bg-white/10 backdrop-blur-sm text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
                   placeholder="Enter a rating"

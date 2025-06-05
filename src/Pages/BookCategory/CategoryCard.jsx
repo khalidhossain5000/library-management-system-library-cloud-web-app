@@ -9,9 +9,8 @@ const CategoryCard = ({singleBook}) => {
   quantity,
   author,
   category,
-//   description,
   rating, 
-//   content  --->dynamic rating will be added later
+//    --->dynamic rating will be added later
 } = singleBook;
 
     return (

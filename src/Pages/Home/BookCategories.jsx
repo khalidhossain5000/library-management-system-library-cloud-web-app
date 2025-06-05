@@ -5,6 +5,7 @@ import { Link } from "react-router";
 const BookCategories = () => {
    
     const categories=["Computer & Programming","Science-Fiction","Sports & Games","Self-Development & Meditation"]
+    
   return (
     <div className="py-12 lg:py-24">
       <h1 className="mb-6 lg:mb-16 text-6xl font-bold text-center text-pink-600">
@@ -28,12 +29,7 @@ const BookCategories = () => {
         }
 
 
-       
-        
-
-        
-
-        
+         
         
       </div>
     </div>
