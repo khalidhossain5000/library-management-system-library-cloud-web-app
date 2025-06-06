@@ -1,10 +1,8 @@
 import axios from "axios";
-
 import Swal from "sweetalert2";
-
-const BorrowedBooksCard = ({ book,DeleteBorrowBook }) => {
-    
-    
+import Rating from "react-rating";
+import { FaStar, FaRegStar } from "react-icons/fa";
+const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
   const {
     bookId,
     title,
@@ -18,13 +16,11 @@ const BorrowedBooksCard = ({ book,DeleteBorrowBook }) => {
   } = book;
   const handleReturnBook = (bookId) => {
     //UPDATE QUANTITY API
-    console.log("handle",bookId);
+    console.log("handle", bookId);
     axios
       .patch(`http://localhost:3000/all-books/quantity/${bookId}`)
       .then(() => {
-        
         // console.log(res.data);
-        
       })
       .catch((error) => {
         console.log(error);
@@ -43,8 +39,7 @@ const BorrowedBooksCard = ({ book,DeleteBorrowBook }) => {
             icon: "success",
             theme: "dark",
           });
-          DeleteBorrowBook(bookId)
-          
+          DeleteBorrowBook(bookId);
         }
         console.log(data);
       })
@@ -62,7 +57,15 @@ const BorrowedBooksCard = ({ book,DeleteBorrowBook }) => {
         <h2 className="text-3xl font-bold text-cyan-600">
           Return Date: {returnDate}
         </h2>
-        <h2>Rating : {rating}</h2>
+        <div className="rtign">
+          <Rating
+            initialRating={rating}
+            emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
+            fullSymbol={<FaStar className="text-3xl text-yellow-500" />}
+            fractions={2}
+            readonly
+          />
+        </div>
         <h2>Author : {author}</h2>
         <h2>Quantity : {quantity}</h2>
         <h2>Category : {category}</h2>

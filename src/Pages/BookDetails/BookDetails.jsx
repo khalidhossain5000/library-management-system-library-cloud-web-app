@@ -7,7 +7,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
 import Modal from "react-modal";
-
+import Rating from "react-rating";
+import { FaStar, FaRegStar } from "react-icons/fa";
 const BookDetails = () => {
   const data = useLoaderData();
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -43,7 +44,7 @@ const BookDetails = () => {
     const borrowBook = {
       bookId: _id,
       userEmail: user?.email,
-      returnDate:returnDate
+      returnDate: returnDate,
     };
     if (!returnDate) {
       Swal.fire({
@@ -95,7 +96,15 @@ const BookDetails = () => {
         <h2 className="text-2xl font-bold text-blue-600">
           Quantity : {quantity}
         </h2>
-        <h2>Rating : {rating}</h2>
+        <div className="rtign">
+          <Rating
+            initialRating={rating}
+            emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
+            fullSymbol={<FaStar className="text-3xl text-yellow-500" />}
+            fractions={2}
+            readonly
+          />
+        </div>
         <h2>Author : {author}</h2>
         <h2>Category : {category}</h2>
         <p>Description : {description}</p>
@@ -104,7 +113,7 @@ const BookDetails = () => {
           <button
             onClick={openModal}
             className={`w-9/12 mt-6 btn btn-info text-black font-bold `}
-            disabled={quantity<=0}
+            disabled={quantity <= 0}
           >
             Borrow
           </button>
@@ -141,9 +150,27 @@ const BookDetails = () => {
           placeholderText="Select a date between today and 5 days in the future"
           className="w-full lg:py-3 text-white px-5 lg:text-xl lg:font-bold"
         />
-        <input className="input bg-pink-500 text-white font-bold rounded-2xl w-9/12 mx-auto flex justify-center" type="text" name="" defaultValue={user?.displayName} readOnly/>
-        <input className="input bg-pink-500 text-white font-bold rounded-2xl w-9/12 mx-auto flex justify-center" type="email" name="" defaultValue={user?.email} readOnly />
-        <input disabled={quantity<=0} onClick={handleBorrowBook} type="submit" value="Submit" className={`btn btn-success font-bold text-black text-2xl `} />
+        <input
+          className="input bg-pink-500 text-white font-bold rounded-2xl w-9/12 mx-auto flex justify-center"
+          type="text"
+          name=""
+          defaultValue={user?.displayName}
+          readOnly
+        />
+        <input
+          className="input bg-pink-500 text-white font-bold rounded-2xl w-9/12 mx-auto flex justify-center"
+          type="email"
+          name=""
+          defaultValue={user?.email}
+          readOnly
+        />
+        <input
+          disabled={quantity <= 0}
+          onClick={handleBorrowBook}
+          type="submit"
+          value="Submit"
+          className={`btn btn-success font-bold text-black text-2xl `}
+        />
       </Modal>
 
       {/* modal end */}
