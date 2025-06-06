@@ -9,10 +9,10 @@ const AddBook = () => {
     e.preventDefault();
     const form=e.target;
     const formData=new FormData(form);
-    const data=Object.fromEntries(formData.entries())
-    data.quantity=parseInt(data.quantity)
+    const data=Object.fromEntries(formData.entries());
+    data.quantity=parseInt(data.quantity);
 
-    console.log(data);
+    
     //data sending to db
     axios.post('http://localhost:3000/books',data)
     .then((res)=>{

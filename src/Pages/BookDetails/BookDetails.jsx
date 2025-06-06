@@ -43,6 +43,7 @@ const BookDetails = () => {
     const borrowBook = {
       bookId: _id,
       userEmail: user?.email,
+      returnDate:returnDate
     };
     if (!returnDate) {
       Swal.fire({
