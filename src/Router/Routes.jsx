@@ -10,6 +10,7 @@ import BorrowedBooks from "../Pages/BorrowedBook/BorrowedBooks";
 import BookCategory from "../Pages/BookCategory/BookCategory";
 import Loading from "../Components/Loading/Loading";
 import BookDetails from "../Pages/BookDetails/BookDetails";
+import UpdateBook from "../Pages/UpdateBookPage/UpdateBook";
 
 export const router=createBrowserRouter([
     {
@@ -31,6 +32,10 @@ export const router=createBrowserRouter([
                 element:<PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
                 loader:({params})=>fetch(`http://localhost:3000/allBooks/${params.id}`),
                 hydrateFallbackElement:<Loading/>
+            },
+            {
+                path:'update-book/:id',
+                element:<PrivateRoute><UpdateBook></UpdateBook></PrivateRoute>
             },          
             {
                 path:'add-books',
