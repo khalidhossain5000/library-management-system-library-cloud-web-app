@@ -23,7 +23,7 @@ const UpdateBook = () => {
     const formData = new FormData(form);
     const updatedData = Object.fromEntries(formData.entries());
     updatedData.quantity = parseInt(updatedData.quantity);
-    console.log(updatedData);
+    
 
     //UPDATE DATA STRATS
     axios

@@ -11,6 +11,8 @@ import BookCategory from "../Pages/BookCategory/BookCategory";
 import Loading from "../Components/Loading/Loading";
 import BookDetails from "../Pages/BookDetails/BookDetails";
 import UpdateBook from "../Pages/UpdateBookPage/UpdateBook";
+import ErrorPage from "../Pages/ErrorPageGlobal/ErrorPage";
+
 
 export const router=createBrowserRouter([
     {
@@ -64,6 +66,11 @@ export const router=createBrowserRouter([
                 path:'register',
                 Component:Register
             }
+            
         ]
+    },
+    {
+        path: '*',
+        element: <ErrorPage/>
     }
 ])
