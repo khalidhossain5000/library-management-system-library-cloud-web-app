@@ -143,7 +143,7 @@ const LogIn = () => {
                 {/* FORGER PASSWORD  */}
                 <div className="pt-3 w-full">
                   <Link
-                    to="/auth/forget-password"
+                    to="/forget-password"
                     className="text-left text-[25px] link link-hover text-pink-300"
                   >
                     Forgot password?
@@ -203,14 +203,14 @@ const LogIn = () => {
               {/* DONT HAVE ACCOUNT START HERE*/}
               <div>
                 <h5 className="w-full mx-auto text-2xl text-gray-300">
-                  Don't have an account?{" "}
+                  Don't have an account?
                   <Link
                     state={{ from: logInLocation.state?.from || "/" }}
-                    to="/auth/register"
+                    to="/register"
                     className="text-pink-600 font-bold"
                   >
                     Register
-                  </Link>{" "}
+                  </Link>
                   Here
                 </h5>
               </div>

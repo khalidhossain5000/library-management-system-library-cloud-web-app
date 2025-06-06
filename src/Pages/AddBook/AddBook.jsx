@@ -11,7 +11,7 @@ const AddBook = () => {
     const formData=new FormData(form);
     const data=Object.fromEntries(formData.entries());
     data.quantity=parseInt(data.quantity);
-
+    data.rating=parseInt(data.rating)
     
     //data sending to db
     axios.post('http://localhost:3000/books',data)

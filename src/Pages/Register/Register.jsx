@@ -266,7 +266,7 @@ const Register = () => {
                 <h5 className="w-full mx-auto text-2xl font-bold mt-6 text-gray-300">
                   Already have an account?
                   <Link
-                    to="/auth/login"
+                    to="/login"
                     className="text-pink-500 text-3xl font-bold"
                   >
                     Login
