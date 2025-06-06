@@ -1,8 +1,10 @@
 import axios from "axios";
-import React from "react";
+
 import Swal from "sweetalert2";
 
-const BorrowedBooksCard = ({ book }) => {
+const BorrowedBooksCard = ({ book,DeleteBorrowBook }) => {
+    
+    
   const {
     bookId,
     title,
@@ -14,14 +16,15 @@ const BorrowedBooksCard = ({ book }) => {
     returnDate,
     _id,
   } = book;
-  console.log("book id", bookId);
   const handleReturnBook = (bookId) => {
     //UPDATE QUANTITY API
+    console.log("handle",bookId);
     axios
       .patch(`http://localhost:3000/all-books/quantity/${bookId}`)
-      .then((res) => {
-        console.log(res.data);
-        alert("Quantity Update and book returned");
+      .then(() => {
+        
+        // console.log(res.data);
+        
       })
       .catch((error) => {
         console.log(error);
@@ -29,20 +32,25 @@ const BorrowedBooksCard = ({ book }) => {
       });
 
     //DELETE BORROW BOOK API
-    axios.delete(`http://localhost:3000/borrowed-books/${_id}`)
-    .then((res) => {
-      const data = res.data;
-      console.log(data);
-      Swal.fire({
-        title: "Deleted!",
-        text: "You Returned The Book SuccessFully!Thanks",
-        icon: "success",
-        theme:'dark'
-      });
-    })
-    .catch(error=>{
+    axios
+      .delete(`http://localhost:3000/borrowed-books/${_id}`)
+      .then((res) => {
+        const data = res.data;
+        if (data.deletedCount) {
+          Swal.fire({
+            title: "Book Returned!",
+            text: "You Returned The Book SuccessFully!Thanks",
+            icon: "success",
+            theme: "dark",
+          });
+          DeleteBorrowBook(bookId)
+          
+        }
+        console.log(data);
+      })
+      .catch((error) => {
         console.log(error);
-    })
+      });
   };
   return (
     <div className="container mx-auto">
