@@ -11,8 +11,6 @@ const AddBook = () => {
     const formData=new FormData(form);
     const data=Object.fromEntries(formData.entries())
     data.quantity=parseInt(data.quantity)
-    
-    
 
     console.log(data);
     //data sending to db

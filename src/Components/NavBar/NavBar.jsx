@@ -39,7 +39,7 @@ const NavBar = () => {
         <NavLink to="/add-books">Add Book (p)</NavLink>
       </li>
       <li>
-        <NavLink to="/borrowed-books">Borrowed Book (p)</NavLink>
+        <NavLink to="/borrowed-books/:email">Borrowed Book (p)</NavLink>
       </li>
 
       {user ? (

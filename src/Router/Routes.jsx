@@ -29,15 +29,18 @@ export const router=createBrowserRouter([
             {
                 path:'all-books/:id',
                 element:<PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:3000/allBooks/${params.id}`)
+                loader:({params})=>fetch(`http://localhost:3000/allBooks/${params.id}`),
+                hydrateFallbackElement:<Loading/>
             },          
             {
                 path:'add-books',
                 element:<PrivateRoute><AddBook></AddBook></PrivateRoute>
             },            
             {
-                path:'borrowed-books',
-                element:<PrivateRoute><BorrowedBooks></BorrowedBooks></PrivateRoute>
+                path:'borrowed-books/:email',
+                element:<PrivateRoute><BorrowedBooks></BorrowedBooks></PrivateRoute>,
+                
+                hydrateFallbackElement:<Loading/>
             },
             {
                 path:'book-categories/:name',

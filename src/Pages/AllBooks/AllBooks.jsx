@@ -4,6 +4,7 @@ import AllBooksCard from './AllBooksCard';
 
 const AllBooks = () => {
     const allBooks=useLoaderData()
+    console.log(allBooks);
     return (
         <div className='py-12 lg:py-24'>
             <h2 className='text-6xl font-bold text-center text-pink-600'>All Books : {allBooks.length}</h2>
