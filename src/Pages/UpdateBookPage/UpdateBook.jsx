@@ -1,22 +1,54 @@
-import React from "react";
-import bgImg from'../../assets/SliderImg/reading-img.jpg'
+import bgImg from "../../assets/SliderImg/reading-img.jpg";
+import { useLoaderData } from "react-router";
+import axios from "axios";
+import Swal from "sweetalert2";
+
 const UpdateBook = () => {
-    const handleUpdateGroup=e=>{
-        e.preventDefault();
-        const form=e.target;
-        const formData=new FormData(form);
-        const updatedData=Object.fromEntries(formData.entries())
-        updatedData.quantity=parseInt(updatedData.quantity);
-        console.log(updatedData);
-        
-    }
+  
+  const {
+    title,
+    imageUrl,
+    rating,
+    author,
+    quantity,
+    category,
+    _id,
+    description,
+    content,
+  } = useLoaderData();
+ 
+  const handleUpdateGroup = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const updatedData = Object.fromEntries(formData.entries());
+    updatedData.quantity = parseInt(updatedData.quantity);
+    console.log(updatedData);
+
+    //UPDATE DATA STRATS
+    axios
+      .put(`http://localhost:3000/all-books/${_id}`, updatedData)
+      .then((res) => {
+        console.log(res.data);
+        Swal.fire({
+          title: "Book has been updated successfully",
+          icon: "success",
+          theme: "dark",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div>
       <main
         style={{ backgroundImage: `url(${bgImg})` }}
         className="bg-cover bg-no-repeat py-36 bg-top "
       >
-        <h2 className='text-center text-5xl font-bold text-pink-700 py-12'>FIll The Form To Update The Book</h2>
+        <h2 className="text-center text-5xl font-bold text-pink-700 py-12">
+          FIll The Form To Update The Book
+        </h2>
         <section className="max-w-9/12 mx-auto form-full mt-6 lg:mt-0 p-5 lg:p-24 ">
           <form onSubmit={handleUpdateGroup}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -25,6 +57,7 @@ const UpdateBook = () => {
                   Book Title
                 </label>
                 <input
+                  defaultValue={title}
                   type="text"
                   name="title"
                   className="input w-full shadow-2xl bg-white/10 backdrop-blur-sm text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
@@ -36,6 +69,7 @@ const UpdateBook = () => {
                   Book Image URL
                 </label>
                 <input
+                  defaultValue={imageUrl}
                   type="url"
                   name="imageUrl"
                   className="input w-full shadow-2xl bg-white/10 backdrop-blur-sm text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
@@ -48,6 +82,7 @@ const UpdateBook = () => {
                   Enter Book Quantity
                 </label>
                 <input
+                  defaultValue={quantity}
                   type="number"
                   name="quantity"
                   className="input w-full shadow-2xl bg-white/10 backdrop-blur-sm text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
@@ -61,6 +96,7 @@ const UpdateBook = () => {
                   Author Name
                 </label>
                 <input
+                  defaultValue={author}
                   type="text"
                   name="author"
                   placeholder="Author Name"
@@ -75,6 +111,7 @@ const UpdateBook = () => {
                   Select Book Category
                 </label>
                 <select
+                  defaultValue={category}
                   name="category"
                   className="w-full shadow-2xl bg-white/10 backdrop-blur-sm  text-black font-semibold border-2 border-pink-500 py-3 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
                 >
@@ -96,6 +133,7 @@ const UpdateBook = () => {
                   Add Short Description
                 </label>
                 <textarea
+                  defaultValue={description}
                   name="description"
                   placeholder="Description"
                   className="w-full textarea textarea-xs input shadow-2xl bg-white/10 backdrop-blur-sm text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 !text-xl"
@@ -107,6 +145,7 @@ const UpdateBook = () => {
                   Enter A Rating
                 </label>
                 <input
+                  defaultValue={rating}
                   type="number"
                   max="5"
                   name="rating"
@@ -119,11 +158,15 @@ const UpdateBook = () => {
                   Add Book Content
                 </label>
                 <textarea
+                  defaultValue={content}
                   name="content"
                   placeholder="Add Book Content"
                   className="w-full textarea textarea-xs input shadow-2xl bg-white/10 backdrop-blur-sm text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 !text-xl"
                 ></textarea>
               </fieldset>
+              <div className="return-date">
+                
+              </div>
             </div>
 
             <input
