@@ -1,6 +1,9 @@
 import React from "react";
 import Slider from "../../Components/Slider/Slider";
 import BookCategories from "./BookCategories";
+import NewArrivals from "../../Components/NewArrivalSection/NewArrivals";
+
+
 
 
 const Home = () => {
@@ -8,7 +11,7 @@ const Home = () => {
     <div>
       <Slider></Slider>
       <BookCategories></BookCategories>
-      <h2 className="py-36">this is rating</h2>
+      <NewArrivals></NewArrivals>
       
       
     </div>
