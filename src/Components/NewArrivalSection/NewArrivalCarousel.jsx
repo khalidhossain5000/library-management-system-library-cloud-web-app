@@ -9,11 +9,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
+
+
 const NewArrivalCarousel = () => {
   return (
     <div className="container mx-auto">
       <Swiper
-        modules={[Navigation, Autoplay]}
+        modules={[Navigation, Autoplay,]}
         spaceBetween={80}
         slidesPerView={3}
         navigation
