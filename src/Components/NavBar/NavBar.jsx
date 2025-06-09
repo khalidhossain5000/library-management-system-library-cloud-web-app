@@ -72,7 +72,7 @@ const NavBar = () => {
     </>
   );
   return (
-    <div className="text-black w-full bg-gradient-to-r from-[#ffffff] to-[#e0f7ff] py-1 ">
+    <div className="h-text-black w-full bg-gradient-to-r from-[#ffffff] to-[#e0f7ff] py-1 ">
       <div className="navbar container mx-auto items-center">
         <div className="flex items-center justify-between w-full lg:navbar-start">
           <div className="dropdown">

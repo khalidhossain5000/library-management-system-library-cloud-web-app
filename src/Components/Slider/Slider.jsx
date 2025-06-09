@@ -1,6 +1,6 @@
 import React from "react";
-import sliderImg1 from "../../assets/SliderImg/img-i.jpg";
-import sliderImg2 from "../../assets/SliderImg/img-ii.jpg";
+import sliderImg1 from "../../assets/SliderImg/new-img.jpg"
+import sliderImg2 from "../../assets/SliderImg/reading-img.jpg";
 import sliderImg3 from "../../assets/SliderImg/slider-img.jpg";
 // import Swiper core and required modules
 import { Navigation, Autoplay } from "swiper/modules";
@@ -25,7 +25,7 @@ const Slider = () => {
       >
         {/* slider -1 */}
         <SwiperSlide>
-          <div className="relative h-[100vh] w-full">
+          <div className="relative h-[100vh] lg:h-[100vh] w-full">
             <img
               className="w-full h-[100vh] lg:max-h-[100vh]"
               src={sliderImg2}
@@ -35,12 +35,12 @@ const Slider = () => {
             <div className="absolute inset-0 bg-[#0000008b] flex flex-col justify-center items-center text-center p-6">
               
                 <h2 className="lg:text-6xl font-bold text-[#feecff]">
-                  Welcome To HobbyNest:A Local Hobby Group Organzier
+                  Welcome To LibraryCloud:A Library Management System.
                 </h2>
               
-              <h5 className="lg:text-xl font-medium text-[#fef0ff] w-full lg:w-6/12 mx-auto mt-9">
-                HobbyNest is a platform where people can discover and join local
-                hobby-based groups or create their own. It encourages social engagement through shared interests, helping people building communities around their passions.
+              <h5 className="lg:text-2xl font-medium text-[#fef0ff] w-full lg:w-6/12 mx-auto mt-9">
+                LibraryCloud is an awesome library management system.It is a platform where people can discover thousands of books,can borrow the books by creating an account and return it.
+                
               </h5>
             </div>
           </div>
@@ -57,12 +57,11 @@ const Slider = () => {
             <div className="absolute inset-0 bg-[#0000008b] flex flex-col justify-center items-center text-center p-6">
               
                 <h2 className="lg:text-6xl font-bold text-[#fef0ff]">
-                  Turn Your Hobbies Into FriendShip!
+                  Unlock The World Of Knowledge.
                 </h2>
               
               <h5 className="lg:text-xl font-medium text-[#fef0ff] w-full lg:w-6/12 mx-auto mt-9">
-                Using our website you can create your hobbie group and find your
-                related passion people.We are helping people building communities around their passions.
+                Explore thousands of books on our website.Efficient, fast, and user-friendly system for modern libraries.
               </h5>
             </div>
           </div>
@@ -79,12 +78,11 @@ const Slider = () => {
             <div className="absolute inset-0 bg-[#0000008b] flex flex-col justify-center items-center text-center p-6">
               
                 <h2 className="lg:text-6xl font-bold text-[#feecff]">
-                  Your Next Hobbie Adventure Start Here With Us
+                  Smart and Faster Library Management System
                 </h2>
            
               <h5 className="lg:text-xl font-medium text-[#fef0ff] w-full lg:w-6/12 mx-auto mt-9">
-                Create account and join our website and find your hobbie realted
-                people and start your next adventure.We are encouraging social engagement through shared interests.So Start Today!
+                Experience an awesome library management system at your fingerprints.Real time book tracking,member management smarter and faster library.
               </h5>
             </div>
           </div>
