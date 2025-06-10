@@ -9,7 +9,7 @@ const RootLayout = () => {
             <header>
                 <NavBar></NavBar>
             </header>
-            <main>
+            <main className='overflow-x-hidden'>
                 <Outlet></Outlet>
             </main>
             <footer>

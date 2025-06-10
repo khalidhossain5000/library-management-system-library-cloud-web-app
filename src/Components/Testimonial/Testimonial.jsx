@@ -4,16 +4,20 @@ import Marquee from "react-fast-marquee";
 import { motion } from "motion/react";
 const Testimonial = () => {
   return (
-    <div>
-      <h1 className="text-5xl font-bold text-blue-700 text-center pt-12">
+    <div className="py-24 bg-gray-300">
+      <h1 className='text-6xl font-bold text-[#1F2937] text-center py-6'>
         Testimonials
       </h1>
-      <h5 className="text-2xl font-semibold text-black text-center py-3">
+      <h5 className="text-2xl font-semibold text-black text-center pt-6">
         Check out What our user's says about our library!
       </h5>
 
-      <div className="mar-container py-48">
-        <Marquee speed={60}>
+      <div className="mar-container py-48 cursor-pointer">
+        <Marquee 
+        gradient
+        gradientColor='#bb0af950'
+        pauseOnHover={true}
+        speed={60}>
           {/* card-1 */}
           <div className="w-[500px] mx-6 p-12 rounded-2xl shadow-2xl bg-gradient-to-br from-[#4b06e1] to-[#11072a] ">
             <div className="content">

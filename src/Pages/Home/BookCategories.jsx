@@ -7,8 +7,8 @@ const BookCategories = () => {
     const categories=["Computer & Programming","Science-Fiction","Sports & Games","Self-Development & Meditation"]
     
   return (
-    <div className="py-12 lg:py-24">
-      <h1 className="mb-6 lg:mb-16 text-6xl font-bold text-center text-pink-600">
+    <div className="py-12 lg:py-24 bg-[#F9FAFB]">
+      <h1 className="mb-6 lg:mb-16 text-6xl font-bold text-center text-[#1F2937]">
         Book Categories
       </h1>
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-6 lg:py-16">

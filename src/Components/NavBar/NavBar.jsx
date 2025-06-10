@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
-
+import logo from "../../assets/logo/librarycloudlogo.png"
 const NavBar = () => {
   const { user ,logOutUser} = useAuth();
 
@@ -72,7 +72,7 @@ const NavBar = () => {
     </>
   );
   return (
-    <div className="h-text-black w-full bg-gradient-to-r from-[#ffffff] to-[#e0f7ff] py-1 ">
+    <div className=" text-black w-full bg-gradient-to-r from-[#ffffff] to-[#e0f7ff] ">
       <div className="navbar container mx-auto items-center">
         <div className="flex items-center justify-between w-full lg:navbar-start">
           <div className="dropdown">
@@ -100,7 +100,7 @@ const NavBar = () => {
             </ul>
           </div>
           <div>
-            <img className="max-w-[150px] lg:max-w-[250px] " src={``} alt="" />
+            <img className="max-w-[150px] lg:max-w-[250px] h-[90px]" src={logo} alt="" />
           </div>
         </div>
         <div className="navbar-end hidden lg:flex">
