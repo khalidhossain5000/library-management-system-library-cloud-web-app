@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import AllBooksCard from "./AllBooksCard";
+import AllBooksTable from "./AllBooksTable";
 
 const AllBooks = () => {
   const allBooks = useLoaderData();
-  const [filterBooks,setFilterBooks]=useState(allBooks)
-  console.log("this is fiter",filterBooks);
+  const [filterBooks, setFilterBooks] = useState(allBooks);
+  const [view, setView] = useState("card");
 
-  const handleFilterBooks=()=>{
-    const availableBooks=filterBooks.filter((books)=>books.quantity>0)
-    
-    setFilterBooks(availableBooks)
-  }
+  const handleFilterBooks = () => {
+    const availableBooks = filterBooks.filter((books) => books.quantity > 0);
+
+    setFilterBooks(availableBooks);
+  };
   return (
     <div className="py-12 lg:py-24">
       <h2 className="mb-6 lg:mb-16 text-6xl font-bold text-center text-[#1F2937]">
@@ -19,24 +20,65 @@ const AllBooks = () => {
       </h2>
 
       {/* filter sidebar */}
-<section className="bg-red-200">
-      <section className="lg:flex filter-container container mx-auto py-12 lg:py-24 gap-6">
-        <div className="w-[20%] bg-green-300 shadow-2xl rounded-4xl">
-          <aside className="text-center mt-12">
-            <button onClick={handleFilterBooks} className="btn btn-warning btn-bold text-xl text-black">
-              Show Available Books
-            </button>
-          </aside>
-        </div>
+      <section className="bg-red-200">
+        <section className="lg:flex filter-container container mx-auto py-12 lg:py-24 gap-6">
+          <div className="w-[20%] bg-green-300 shadow-2xl rounded-4xl">
+            <aside className="text-center mt-12">
+              <button
+                onClick={handleFilterBooks}
+                className="btn btn-warning btn-bold text-xl text-black"
+              >
+                Show Available Books
+              </button>
+              {/* select  VIEW*/}
+              <select
+                defaultValue="Card View"
+                className="select select-md mt-6 w-9/12 text-black text-xl font-bold"
+                onChange={(e) => setView(e.target.value)}
+              >
+                <option disabled={true}>Select Books View</option>
+                <option value="card">Card View</option>
+                <option value="table">Table View</option>
+              </select>
+            </aside>
+          </div>
 
-        <div className="bg-blue-300 shadow-2xl rounded-xl p-6 w-[80%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5  gap-6 ">
-          {filterBooks.map((book) => (
-            <AllBooksCard key={book._id} book={book}></AllBooksCard>
-          ))}
-        </div>
-      </section>
+          {/* CARD VIEW CONTAINER  */}
+          {view == "card" && (
+            <div className="bg-blue-300 shadow-2xl rounded-xl p-6 w-[80%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5  gap-6 ">
+              {filterBooks.map((book) => (
+                <AllBooksCard key={book._id} book={book}></AllBooksCard>
+              ))}
+            </div>
+          )}
 
+          {/* TABLE VIEW CONTAINER */}
 
+          {view === "table" && (
+            <div className="bg-blue-300 shadow-2xl rounded-xl p-6 w-[80%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5  gap-6">
+              <table className="table border-1 border-pink-600 table-auto w-full">
+                {/* head */}
+                <thead className="">
+                  <tr className="border-b-1 border-b-pink-600 text-[#feeeff] text-xl font-normal">
+                    <th className="">#</th>
+                    <th className="border-x-1 border-x-pink-300">Book Image</th>
+                    <th className="border-x-1 border-x-pink-300">Book Name</th>
+                    <th className="border-x-1 border-x-pink-300">Author</th>
+                    <th className="border-x-1 border-x-pink-300">Category</th>
+                    <th className="border-x-1 border-x-pink-300">Quantity</th>
+                    <th className="border-x-1 border-x-pink-300">Rating</th>
+                    <th className="border-x-1 border-x-pink-300">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="">
+                  {filterBooks.map((books, index) => <AllBooksTable key={index} allBooks={books} index={index}
+                    ></AllBooksTable>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </section>
       </section>
     </div>
   );
