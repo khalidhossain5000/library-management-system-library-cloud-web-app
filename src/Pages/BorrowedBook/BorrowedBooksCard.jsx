@@ -2,6 +2,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
+
 const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
   const {
     bookId,
@@ -14,6 +15,7 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
     returnDate,
     _id,
   } = book;
+
   const handleReturnBook = (bookId) => {
     //UPDATE QUANTITY API
     console.log("handle", bookId);

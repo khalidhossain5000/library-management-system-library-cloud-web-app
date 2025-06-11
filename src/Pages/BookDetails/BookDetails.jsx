@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import { useLoaderData } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import axios from "axios";
@@ -9,11 +9,31 @@ import Swal from "sweetalert2";
 import Modal from "react-modal";
 import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const BookDetails = () => {
+  
   const data = useLoaderData();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [books, setBooks] = useState(data);
   const [returnDate, setReturnDate] = useState(null);
+
+  
+
 
   const { user } = useAuth();
 
@@ -80,43 +100,66 @@ const BookDetails = () => {
       })
       .catch((error) => {
         console.log(error);
-        alert("Borrow book error occured");
+
+        if (error.response?.status === 400) {
+      Swal.fire({
+        icon: "error",
+        title: "Already Borrowed!",
+        text: "You have already borrowed this book. Return it first to borrow again.",
+        theme: "dark",
+      });
+    } else {
+      alert("Borrow error occurred");
+    }
+        // alert("Borrow book error occured");
       });
   };
   return (
-    <div className="py-24">
+    <div className="py-24 bg-gradient-to-tr from-[#010313] to-[#0f7366]">
       <h2 className="text-6xl font-bold text-center text-pink-600">
         Book Details of : {title}
       </h2>
-      <div className="container mx-auto py-24">
-        <img className="mx-auto" src={imageUrl} alt="" />
-        <h1 className="text-3xl font-bold text-center text-pink-600">
-          {title}
-        </h1>
-        <h2 className="text-2xl font-bold text-blue-600">
-          Quantity : {quantity}
-        </h2>
-        <div className="rtign">
-          <Rating
-            initialRating={rating}
-            emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
-            fullSymbol={<FaStar className="text-3xl text-yellow-500" />}
-            fractions={2}
-            readonly
-          />
+
+      <div className="container mx-auto py-24 flex  justify-center gap-12">
+        <div className="imgs border border-pink-200 rounded-2xl p-6 !h-full bg-pink-600">
+          <img className="" src={imageUrl} alt="" />
         </div>
-        <h2>Author : {author}</h2>
-        <h2>Category : {category}</h2>
-        <p>Description : {description}</p>
-        <p>Content of Books : {content}</p>
-        <div className="text-center">
-          <button
-            onClick={openModal}
-            className={`w-9/12 mt-6 btn btn-info text-black font-bold `}
-            disabled={quantity <= 0}
-          >
-            Borrow
-          </button>
+
+        <div className="contnt border border-amber-300 rounded-2xl  p-9 w-full space-y-2">
+          <h1 className="text-3xl font-bold text-[#fdfffe]">{title}</h1>
+          <h2 className="text-xl font-semibold text-pink-300 py-6">
+            By : {author}
+          </h2>
+          <h2 className="text-xl font-semibold text-pink-300 ">
+            Category : {category}
+          </h2>
+          <div className="rtign">
+            <Rating
+              initialRating={rating}
+              emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
+              fullSymbol={<FaStar className="text-3xl text-yellow-500" />}
+              fractions={2}
+              readonly
+            />
+          </div>
+          <p className="text-xl font-semibold text-white ">
+            Description : {description}
+          </p>
+          <h2 className="text-2xl font-bold text-fuchsia-500">
+            Quantity : {quantity}
+          </h2>
+          <p className="text-3xl font-semibold text-pink-100 ">
+            Content of Books : {content}
+          </p>
+          <div className="text-center">
+            <button
+              onClick={openModal}
+              className={`w-9/12 mt-6 btn btn-info text-black font-bold text-2xl py-8`}
+              disabled={quantity <= 0}
+            >
+              Borrow
+            </button>
+          </div>
         </div>
       </div>
 

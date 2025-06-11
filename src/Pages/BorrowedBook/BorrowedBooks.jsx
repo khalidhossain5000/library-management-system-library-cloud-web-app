@@ -13,7 +13,7 @@ const BorrowedBooks = () => {
     useEffect(()=>{
         axios(`http://localhost:3000/borrowed-books/${user?.email}`)
         .then((result)=>{
-            const data=result.data;
+            const data=result.data; 
             setBorrowedBooks(data)
         })
         .catch((error)=>{
