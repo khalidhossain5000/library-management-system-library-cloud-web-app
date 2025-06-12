@@ -16,7 +16,7 @@ const AllBooksTable = ({ allBooks, index }) => {
   } = allBooks;
 
 
-  console.log("this is",allBooks);
+  
   return (
     
       

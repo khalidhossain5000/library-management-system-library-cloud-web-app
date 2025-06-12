@@ -20,8 +20,7 @@ const Slider = () => {
         navigation
         loop={true}
         autoplay={{ delay: 5000 }}
-        // onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
+       
       >
         {/* slider -1 */}
         <SwiperSlide>

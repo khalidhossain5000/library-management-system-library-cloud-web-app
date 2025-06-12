@@ -1,22 +1,42 @@
-import React, { useState } from "react";
-import { useLoaderData } from "react-router";
+import React, { useEffect, useState } from "react";
+// import { useLoaderData } from "react-router";
 import AllBooksCard from "./AllBooksCard";
 import AllBooksTable from "./AllBooksTable";
+import axios from "axios";
+import useAuth from "../../Hooks/useAuth";
 
 const AllBooks = () => {
-  const allBooks = useLoaderData();
-  const [filterBooks, setFilterBooks] = useState(allBooks);
+  // const allBooks = useLoaderData();
+  const [allBooks,setAllBooks]=useState([])
+  // const [filterBooks, setFilterBooks] = useState(allBooks);
   const [view, setView] = useState("card");
-
+  //AVOIDING LOADER() METHOD AND FETCHING DATA USING USEEFFECT
+  const {user}=useAuth()
+  useEffect(()=>{
+    axios('http://localhost:3000/allBooks',{
+      headers:{
+        authorization:`Bearer ${user?.accessToken}`
+      }
+    })
+    .then((res)=>{
+      const data=res.data;
+      setAllBooks(data)
+    })
+    .catch(error=>{
+      console.log(error)
+    })
+  },[user?.accessToken])
+  // console.log(allBooks);
+  //AVOIDING LOADER() METHOD AND FETCHING DATA USING USEEFFECT ends here
   const handleFilterBooks = () => {
-    const availableBooks = filterBooks.filter((books) => books.quantity > 0);
-
-    setFilterBooks(availableBooks);
+    // const availableBooks = filterBooks.filter((books) => books.quantity > 0);
+    const availableBooks = allBooks.filter((books) => books.quantity > 0);
+    setAllBooks(availableBooks);
   };
   return (
     <div className="py-12 lg:py-24">
       <h2 className="mb-6 lg:mb-16 text-6xl font-bold text-center text-[#1F2937]">
-        All Books : {filterBooks.length}
+        All Books : {allBooks.length}
       </h2>
 
       {/* filter sidebar */}
@@ -46,7 +66,7 @@ const AllBooks = () => {
           {/* CARD VIEW CONTAINER  */}
           {view == "card" && (
             <div className="bg-blue-300 shadow-2xl rounded-xl p-6 w-[80%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5  gap-6 ">
-              {filterBooks.map((book) => (
+              {allBooks.map((book) => (
                 <AllBooksCard key={book._id} book={book}></AllBooksCard>
               ))}
             </div>
@@ -71,7 +91,7 @@ const AllBooks = () => {
                   </tr>
                 </thead>
                 <tbody className="">
-                  {filterBooks.map((books, index) => <AllBooksTable key={index} allBooks={books} index={index}
+                  {allBooks.map((books, index) => <AllBooksTable key={index} allBooks={books} index={index}
                     ></AllBooksTable>
                   )}
                 </tbody>

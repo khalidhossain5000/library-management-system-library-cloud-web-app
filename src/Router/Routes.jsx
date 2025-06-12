@@ -15,6 +15,7 @@ import ErrorPage from "../Pages/ErrorPageGlobal/ErrorPage";
 
 
 export const router=createBrowserRouter([
+    
     {
         path:'/',
         Component:RootLayout,
@@ -26,8 +27,8 @@ export const router=createBrowserRouter([
             {
                 path:'all-books',
                 element:<PrivateRoute><AllBooks></AllBooks></PrivateRoute>,
-                loader:()=>fetch('http://localhost:3000/allBooks'),
-                hydrateFallbackElement:<Loading/>
+                // loader:()=>fetch('http://localhost:3000/allBooks'),
+                // hydrateFallbackElement:<Loading/>
             },
             {
                 path:'all-books/:id',

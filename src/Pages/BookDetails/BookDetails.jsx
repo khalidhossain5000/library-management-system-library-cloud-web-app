@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import axios from "axios";
@@ -10,30 +10,11 @@ import Modal from "react-modal";
 import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const BookDetails = () => {
-  
   const data = useLoaderData();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [books, setBooks] = useState(data);
   const [returnDate, setReturnDate] = useState(null);
-
-  
-
 
   const { user } = useAuth();
 
@@ -80,43 +61,42 @@ const BookDetails = () => {
     axios
       .post(`http://localhost:3000/borrow-books/${_id}`, borrowBook)
       .then((res) => {
-        toast.success("Book is Added To BorrowBook List.", {
-          className: "w-[300px] h-[100px] text-xl font-bold z-[999]",
-          removeDelay: 1000,
-          iconTheme: {
-            primary: "#16061e",
-            secondary: "#ef54e2",
-          },
-          style: {
-            border: "1px solid black",
-            color: "white",
-            backgroundImage: "linear-gradient(to bottom,#16061e, #ef54e2)",
-          },
-        });
-        console.log(res.data);
+        if (res.data.insertedId) {
+          toast.success("Book is Added To BorrowBook List.", {
+            className: "w-[300px] h-[100px] text-xl font-bold z-[999]",
+            removeDelay: 1000,
+            iconTheme: {
+              primary: "#16061e",
+              secondary: "#ef54e2",
+            },
+            style: {
+              border: "1px solid black",
+              color: "white",
+              backgroundImage: "linear-gradient(to bottom,#16061e, #ef54e2)",
+            },
+          });
+        }
         setBooks((prev) => {
           return { ...prev, quantity: prev.quantity - 1 };
         });
       })
       .catch((error) => {
-        console.log(error);
-
         if (error.response?.status === 400) {
-      Swal.fire({
-        icon: "error",
-        title: "Already Borrowed!",
-        text: "You have already borrowed this book. Return it first to borrow again.",
-        theme: "dark",
-      });
-    } else {
-      alert("Borrow error occurred");
-    }
+          Swal.fire({
+            icon: "error",
+            title: "Already Borrowed!",
+            text: "You have already borrowed this book. Return it first to borrow again.",
+            theme: "dark",
+          });
+        } else {
+          console.log("Borrow error occurred");
+        }
         // alert("Borrow book error occured");
       });
   };
   return (
     <div className="py-24 bg-gradient-to-tr from-[#010313] to-[#0f7366]">
-      <h2 className="text-6xl font-bold text-center text-pink-600">
+      <h2 className="text-6xl font-bold text-[#1F2937] text-center py-6">
         Book Details of : {title}
       </h2>
 

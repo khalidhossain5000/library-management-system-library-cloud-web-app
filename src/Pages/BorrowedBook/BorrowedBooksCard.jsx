@@ -18,11 +18,11 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
 
   const handleReturnBook = (bookId) => {
     //UPDATE QUANTITY API
-    console.log("handle", bookId);
+    
     axios
       .patch(`http://localhost:3000/all-books/quantity/${bookId}`)
       .then(() => {
-        // console.log(res.data);
+       
       })
       .catch((error) => {
         console.log(error);
@@ -43,7 +43,7 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
           });
           DeleteBorrowBook(bookId);
         }
-        console.log(data);
+        
       })
       .catch((error) => {
         console.log(error);
@@ -51,15 +51,17 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
   };
   return (
     <div className="container mx-auto">
-      <div className="card- py-24">
-        <img src={imageUrl} alt="" />
-        <h1 className="text-center text-2xl font-bold text-pink-700 py-6">
+      <div className="card- py-24 shadow-2xl p-6 rounded-2xl bg-slate-200 h-full">
+        <div className="img border border-pink-600 p-2 rounded-xl mx-auto">
+          <img src={imageUrl} alt="" />
+        </div>
+        <h1 className="text-2xl font-bold text-[#1F2937]  py-6">
           {title}
         </h1>
-        <h2 className="text-3xl font-bold text-cyan-600">
+        <h2 className="text-xl font-medium text-[#1F2937] ">
           Return Date: {returnDate}
         </h2>
-        <div className="rtign">
+        <div className="rtign my-3">
           <Rating
             initialRating={rating}
             emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
@@ -68,15 +70,19 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
             readonly
           />
         </div>
-        <h2>Author : {author}</h2>
-        <h2>Quantity : {quantity}</h2>
-        <h2>Category : {category}</h2>
-        <button
+        <h2 className="text-[#1F2937] font-medium text-xl mt-5">Author : {author}</h2>
+        <h2 className="text-[#1F2937] font-medium text-xl my-3">Quantity : {quantity}</h2>
+        <h2 className="text-[#1F2937] font-medium text-xl my-3">Category : {category}</h2>
+        <div className="mt-6 ">
+          <button
           onClick={() => handleReturnBook(bookId)}
-          className="btn btn-xl btn-warning text-2xl font-bold text-black m-6"
+          // className="btn btn-xl btn-warning text-2xl font-bold text-black m-6"
+          className="bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] text-[#0A0A23] font-semibold py-3 px-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 w-full cursor-pointer"
+          
         >
           Return
         </button>
+        </div>
       </div>
     </div>
   );

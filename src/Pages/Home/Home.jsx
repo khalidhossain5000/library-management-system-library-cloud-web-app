@@ -5,8 +5,6 @@ import NewArrivals from "../../Components/NewArrivalSection/NewArrivals";
 import Testimonial from "../../Components/Testimonial/Testimonial";
 
 
-
-
 const Home = () => {
   return (
     <div>

@@ -21,10 +21,10 @@ const BorrowedBooks = () => {
         })
     },[user])
     return (
-        <div className="py-36">
-            <h1 className='text-6xl font-bold text-center text-pink-600'>Total Borrowed Books : {borrowedBooks.length} </h1>
+        <div  className="py-36 bg-[#F4F6FA]">
+            <h1 className='text-6xl font-bold text-[#1F2937] text-center py-6'>Total Borrowed Books : {borrowedBooks.length} </h1>
 
-            <div className="py-12 grid grid-cols-5 container mx-auto">
+            <div className="py-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 container mx-auto">
                 
                 {
                     borrowedBooks.map((book)=><BorrowedBooksCard

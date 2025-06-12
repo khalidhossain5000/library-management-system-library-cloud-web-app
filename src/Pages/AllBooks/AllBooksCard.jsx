@@ -15,6 +15,7 @@ const AllBooksCard = ({ book }) => {
     //content  //--->dynamic rating will be added later
   } = book;
 
+  //THIS IS OPTIONAL LWILL BE DELETED SOON
   const handleDelete = () => {
     fetch(`http://localhost:3000/allBooks-delete/${_id}`, {
       method: "DELETE",
