@@ -13,7 +13,7 @@ const AllBooks = () => {
   //AVOIDING LOADER() METHOD AND FETCHING DATA USING USEEFFECT
   const { user } = useAuth();
   useEffect(() => {
-    axios("http://localhost:3000/allBooks", {
+    axios("https://assignment-11-server-five-lake.vercel.app/allBooks", {
       headers: {
         authorization: `Bearer ${user?.accessToken}`,
       },

@@ -20,7 +20,7 @@ const BookDetails = () => {
   const { user } = useAuth();
   //data loading use effect starts here
   useEffect(() => {
-    axios(`http://localhost:3000/allBooks/${id}`, {
+    axios(`https://assignment-11-server-five-lake.vercel.app/allBooks/${id}`, {
       headers: {
         authorization: `Bearer ${user?.accessToken}`,
       },
@@ -75,11 +75,15 @@ const BookDetails = () => {
 
     //SAVE BORROW BOOK IN TO THE DB
     axios
-      .post(`http://localhost:3000/borrow-books/${_id}`, borrowBook, {
-        headers: {
-          authorization: `Bearer ${user?.accessToken}`,
-        },
-      })
+      .post(
+        `https://assignment-11-server-five-lake.vercel.app/borrow-books/${_id}`,
+        borrowBook,
+        {
+          headers: {
+            authorization: `Bearer ${user?.accessToken}`,
+          },
+        }
+      )
       .then((res) => {
         if (res.data.insertedId) {
           toast.success("Book is Added To BorrowBook List.", {

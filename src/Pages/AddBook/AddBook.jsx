@@ -16,7 +16,7 @@ const AddBook = () => {
 
     //data sending to db
     axios
-      .post("http://localhost:3000/books", data, {
+      .post("https://assignment-11-server-five-lake.vercel.app/books", data, {
         headers: {
           authorization: `Bearer ${user?.accessToken}`,
         },

@@ -9,11 +9,14 @@ const BorrowedBooks = () => {
 
   const { user } = useAuth();
   useEffect(() => {
-    axios(`http://localhost:3000/borrowed-books/${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${user?.accessToken}`,
-      },
-    })
+    axios(
+      `https://assignment-11-server-five-lake.vercel.app/borrowed-books/${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${user?.accessToken}`,
+        },
+      }
+    )
       .then((result) => {
         const data = result.data;
         setBorrowedBooks(data);

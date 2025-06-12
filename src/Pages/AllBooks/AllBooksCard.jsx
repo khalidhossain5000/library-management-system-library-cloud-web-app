@@ -17,9 +17,12 @@ const AllBooksCard = ({ book }) => {
 
   //THIS IS OPTIONAL LWILL BE DELETED SOON
   const handleDelete = () => {
-    fetch(`http://localhost:3000/allBooks-delete/${_id}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://assignment-11-server-five-lake.vercel.app/allBooks-delete/${_id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((result) => {
         alert("deleted");
         console.log(result);

@@ -23,7 +23,7 @@ const UpdateBook = () => {
 
   //fetching this books singlle data
   useEffect(() => {
-    axios(`http://localhost:3000/allBooks/${id}`, {
+    axios(`https://assignment-11-server-five-lake.vercel.app/allBooks/${id}`, {
       headers: {
         authorization: `Bearer ${user?.accessToken}`,
       },
@@ -46,7 +46,10 @@ const UpdateBook = () => {
 
     //UPDATE DATA STRATS
     axios
-      .put(`http://localhost:3000/all-books/${_id}`, updatedData)
+      .put(
+        `https://assignment-11-server-five-lake.vercel.app/all-books/${_id}`,
+        updatedData
+      )
       .then((res) => {
         console.log(res.data);
         Swal.fire({
