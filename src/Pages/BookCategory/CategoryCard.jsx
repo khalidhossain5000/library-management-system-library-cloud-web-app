@@ -14,6 +14,7 @@ const CategoryCard = ({ singleBook }) => {
     rating,
     //    --->dynamic rating will be added later
   } = singleBook;
+  
   return (
     <div className="flex flex-col h-full p-6 shadow-2xl rounded-xl">
       <div className="imgs w-full mb-6 lg:mb-8">
