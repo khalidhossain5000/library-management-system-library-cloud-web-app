@@ -16,20 +16,18 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
     returnDate,
     _id,
   } = book;
-  
-  const {user}=useAuth()
+
+  const { user } = useAuth();
 
   const handleReturnBook = (bookId) => {
     //UPDATE QUANTITY API
     axios
-      .patch(`http://localhost:3000/all-books/quantity/${bookId}`,{
+      .patch(`http://localhost:3000/all-books/quantity/${bookId}`,{},{
         headers:{
-        authorization:`Bearer ${user?.accessToken}`
-      }
+          authorization: `Bearer ${user?.accessToken}`,
+        },
       })
-      .then(() => {
-       
-      })
+      .then(() => {})
       .catch((error) => {
         console.log(error);
         alert("Reutrn error");
@@ -37,11 +35,11 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
 
     //DELETE BORROW BOOK API
     axios
-      .delete(`http://localhost:3000/borrowed-books/${_id}`,{
-      headers:{
-        authorization:`Bearer ${user?.accessToken}`
-      }
-    })
+      .delete(`http://localhost:3000/borrowed-books/${_id}`, {
+        headers: {
+          authorization: `Bearer ${user?.accessToken}`,
+        },
+      })
       .then((res) => {
         const data = res.data;
         if (data.deletedCount) {
@@ -53,7 +51,6 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
           });
           DeleteBorrowBook(bookId);
         }
-        
       })
       .catch((error) => {
         console.log(error);
@@ -65,9 +62,7 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
         <div className="img border border-pink-600 p-2 rounded-xl mx-auto">
           <img src={imageUrl} alt="" />
         </div>
-        <h1 className="text-2xl font-bold text-[#1F2937]  py-6">
-          {title}
-        </h1>
+        <h1 className="text-2xl font-bold text-[#1F2937]  py-6">{title}</h1>
         <h2 className="text-xl font-medium text-[#1F2937] ">
           Return Date: {returnDate}
         </h2>
@@ -80,18 +75,23 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
             readonly
           />
         </div>
-        <h2 className="text-[#1F2937] font-medium text-xl mt-5">Author : {author}</h2>
-        <h2 className="text-[#1F2937] font-medium text-xl my-3">Quantity : {quantity}</h2>
-        <h2 className="text-[#1F2937] font-medium text-xl my-3">Category : {category}</h2>
+        <h2 className="text-[#1F2937] font-medium text-xl mt-5">
+          Author : {author}
+        </h2>
+        <h2 className="text-[#1F2937] font-medium text-xl my-3">
+          Quantity : {quantity}
+        </h2>
+        <h2 className="text-[#1F2937] font-medium text-xl my-3">
+          Category : {category}
+        </h2>
         <div className="mt-6 ">
           <button
-          onClick={() => handleReturnBook(bookId)}
-          // className="btn btn-xl btn-warning text-2xl font-bold text-black m-6"
-          className="bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] text-[#0A0A23] font-semibold py-3 px-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 w-full cursor-pointer"
-          
-        >
-          Return
-        </button>
+            onClick={() => handleReturnBook(bookId)}
+            // className="btn btn-xl btn-warning text-2xl font-bold text-black m-6"
+            className="bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] text-[#0A0A23] font-semibold py-3 px-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 w-full cursor-pointer"
+          >
+            Return
+          </button>
         </div>
       </div>
     </div>

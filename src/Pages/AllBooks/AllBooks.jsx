@@ -7,25 +7,25 @@ import useAuth from "../../Hooks/useAuth";
 
 const AllBooks = () => {
   // const allBooks = useLoaderData();
-  const [allBooks,setAllBooks]=useState([])
+  const [allBooks, setAllBooks] = useState([]);
   // const [filterBooks, setFilterBooks] = useState(allBooks);
   const [view, setView] = useState("card");
   //AVOIDING LOADER() METHOD AND FETCHING DATA USING USEEFFECT
-  const {user}=useAuth()
-  useEffect(()=>{
-    axios('http://localhost:3000/allBooks',{
-      headers:{
-        authorization:`Bearer ${user?.accessToken}`
-      }
+  const { user } = useAuth();
+  useEffect(() => {
+    axios("http://localhost:3000/allBooks", {
+      headers: {
+        authorization: `Bearer ${user?.accessToken}`,
+      },
     })
-    .then((res)=>{
-      const data=res.data;
-      setAllBooks(data)
-    })
-    .catch(error=>{
-      console.log(error)
-    })
-  },[user?.accessToken])
+      .then((res) => {
+        const data = res.data;
+        setAllBooks(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [user?.accessToken]);
   // console.log(allBooks);
   //AVOIDING LOADER() METHOD AND FETCHING DATA USING USEEFFECT ends here
   const handleFilterBooks = () => {
@@ -91,9 +91,13 @@ const AllBooks = () => {
                   </tr>
                 </thead>
                 <tbody className="">
-                  {allBooks.map((books, index) => <AllBooksTable key={index} allBooks={books} index={index}
+                  {allBooks.map((books, index) => (
+                    <AllBooksTable
+                      key={index}
+                      allBooks={books}
+                      index={index}
                     ></AllBooksTable>
-                  )}
+                  ))}
                 </tbody>
               </table>
             </div>

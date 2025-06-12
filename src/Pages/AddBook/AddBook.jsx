@@ -4,45 +4,44 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
 
-
 const AddBook = () => {
-  const {user}=useAuth()
+  const { user } = useAuth();
   const handleAddBook = (e) => {
     e.preventDefault();
-    const form=e.target;
-    const formData=new FormData(form);
-    const data=Object.fromEntries(formData.entries());
-    data.quantity=parseInt(data.quantity);
-    data.rating=parseInt(data.rating)
-    
-    //data sending to db
-    axios.post('http://localhost:3000/books',data,{
-      headers:{
-        authorization:`Bearer ${user?.accessToken}`
-      }
-    })
-    .then((res)=>{
-      if(res.data.insertedId){
-        toast.success("Book Added Successfully", {
-          className: "w-[300px] h-[100px] text-xl font-bold",
-          removeDelay: 1000,
-          iconTheme: {
-            primary: "#16061e",
-            secondary: "#ef54e2",
-          },
-          style: {
-            border: "1px solid black",
-            color: "white",
-            backgroundImage: "linear-gradient(to bottom,#16061e, #ef54e2)",
-          },
-        });
-      }
-    })
-    .catch(error=>{
-      console.log(error);
-    })
-  };
+    const form = e.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    data.quantity = parseInt(data.quantity);
+    data.rating = parseInt(data.rating);
 
+    //data sending to db
+    axios
+      .post("http://localhost:3000/books", data, {
+        headers: {
+          authorization: `Bearer ${user?.accessToken}`,
+        },
+      })
+      .then((res) => {
+        if (res.data.insertedId) {
+          toast.success("Book Added Successfully", {
+            className: "w-[300px] h-[100px] text-xl font-bold",
+            removeDelay: 1000,
+            iconTheme: {
+              primary: "#16061e",
+              secondary: "#ef54e2",
+            },
+            style: {
+              border: "1px solid black",
+              color: "white",
+              backgroundImage: "linear-gradient(to bottom,#16061e, #ef54e2)",
+            },
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div>
@@ -88,7 +87,6 @@ const AddBook = () => {
                 </label>
                 <input
                   type="number"
-                  
                   name="quantity"
                   className="input w-full shadow-2xl bg-white/10 backdrop-blur-sm text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
                   placeholder="Max Members"
@@ -105,7 +103,6 @@ const AddBook = () => {
                   name="author"
                   placeholder="Author Name"
                   className="input w-full shadow-2xl bg-white/10 backdrop-blur-sm text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
-                  
                 />
               </fieldset>
               {/* author name */}
@@ -127,15 +124,14 @@ const AddBook = () => {
                   <option>Science-Fiction</option>
                   <option>Sports & Games</option>
                   <option>Self-Development & Meditation</option>
-               
                 </select>
               </fieldset>
               {/* Category */}
 
-                {/* descriptions */}
+              {/* descriptions */}
               <fieldset className="bg-white/10 backdrop-blur-sm fieldset rounded-box border border-pink-300 p-4">
                 <label className="label text-pink-100 text-xl lg:text-2xl pb-3">
-                 Add Short Description
+                  Add Short Description
                 </label>
                 <textarea
                   name="description"
@@ -143,14 +139,14 @@ const AddBook = () => {
                   className="w-full textarea textarea-xs input shadow-2xl bg-white/10 backdrop-blur-sm text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 !text-xl"
                 ></textarea>
               </fieldset>
-                {/* Rating  */}
+              {/* Rating  */}
               <fieldset className="bg-white/10 backdrop-blur-sm fieldset rounded-box border border-pink-300 p-4">
                 <label className="label text-pink-100 text-xl lg:text-2xl pb-3">
                   Enter A Rating
                 </label>
                 <input
                   type="number"
-                  max='5'
+                  max="5"
                   name="rating"
                   className="input w-full shadow-2xl bg-white/10 backdrop-blur-sm text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
                   placeholder="Enter a rating"
@@ -158,7 +154,7 @@ const AddBook = () => {
               </fieldset>
               <fieldset className="bg-white/10 backdrop-blur-sm fieldset rounded-box border border-pink-300 p-4">
                 <label className="label text-pink-100 text-xl lg:text-2xl pb-3">
-                 Add Book Content
+                  Add Book Content
                 </label>
                 <textarea
                   name="content"
@@ -167,7 +163,6 @@ const AddBook = () => {
                 ></textarea>
               </fieldset>
             </div>
-            
 
             <input
               type="submit"

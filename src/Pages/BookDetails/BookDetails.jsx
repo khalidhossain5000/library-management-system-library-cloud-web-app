@@ -11,28 +11,28 @@ import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
 
 const BookDetails = () => {
-  // const data = useLoaderData(); 
-  const {id}=useParams()
+  // const data = useLoaderData();
+  const { id } = useParams();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [books, setBooks] = useState([]);
   const [returnDate, setReturnDate] = useState(null);
 
   const { user } = useAuth();
   //data loading use effect starts here
-  useEffect(()=>{
-    axios(`http://localhost:3000/allBooks/${id}`,{
-      headers:{
-        authorization:`Bearer ${user?.accessToken}`
-      }
+  useEffect(() => {
+    axios(`http://localhost:3000/allBooks/${id}`, {
+      headers: {
+        authorization: `Bearer ${user?.accessToken}`,
+      },
     })
-    .then((res)=>{
-      const data=res.data;
-      setBooks(data)
-    })
-    .catch(error=>{
-      console.log(error);
-    })
-  },[id])
+      .then((res) => {
+        const data = res.data;
+        setBooks(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [id]);
   //data loading use effect ends
   // MODAL RELATED FUNC
   const openModal = () => {
@@ -75,11 +75,11 @@ const BookDetails = () => {
 
     //SAVE BORROW BOOK IN TO THE DB
     axios
-      .post(`http://localhost:3000/borrow-books/${_id}`, borrowBook,{
-      headers:{
-        authorization:`Bearer ${user?.accessToken}`
-      }
-    })
+      .post(`http://localhost:3000/borrow-books/${_id}`, borrowBook, {
+        headers: {
+          authorization: `Bearer ${user?.accessToken}`,
+        },
+      })
       .then((res) => {
         if (res.data.insertedId) {
           toast.success("Book is Added To BorrowBook List.", {

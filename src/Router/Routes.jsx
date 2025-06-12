@@ -13,65 +13,81 @@ import BookDetails from "../Pages/BookDetails/BookDetails";
 import UpdateBook from "../Pages/UpdateBookPage/UpdateBook";
 import ErrorPage from "../Pages/ErrorPageGlobal/ErrorPage";
 
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: RootLayout,
+    children: [
+      {
+        index: true,
+        Component: Home,
+      },
+      {
+        path: "all-books",
+        element: (
+          <PrivateRoute>
+            <AllBooks></AllBooks>
+          </PrivateRoute>
+        ),
+        // loader:()=>fetch('http://localhost:3000/allBooks'),
+        // hydrateFallbackElement:<Loading/>
+      },
+      {
+        path: "all-books/:id",
+        element: (
+          <PrivateRoute>
+            <BookDetails></BookDetails>
+          </PrivateRoute>
+        ),
+        // loader:({params})=>fetch(`http://localhost:3000/allBooks/${params.id}`),
+        // hydrateFallbackElement:<Loading/>
+      },
+      {
+        path: "update-book/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateBook></UpdateBook>
+          </PrivateRoute>
+        ),
+        // loader:({params})=>fetch(`http://localhost:3000/allBooks/${params.id}`),
+        // hydrateFallbackElement:<Loading/>
+      },
+      {
+        path: "add-books",
+        element: (
+          <PrivateRoute>
+            <AddBook></AddBook>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "borrowed-books/:email",
+        element: (
+          <PrivateRoute>
+            <BorrowedBooks></BorrowedBooks>
+          </PrivateRoute>
+        ),
 
-export const router=createBrowserRouter([
-    
-    {
-        path:'/',
-        Component:RootLayout,
-        children:[
-            {
-                index:true,
-                Component:Home
-            },
-            {
-                path:'all-books',
-                element:<PrivateRoute><AllBooks></AllBooks></PrivateRoute>,
-                // loader:()=>fetch('http://localhost:3000/allBooks'),
-                // hydrateFallbackElement:<Loading/>
-            },
-            {
-                path:'all-books/:id',
-                element:<PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
-                // loader:({params})=>fetch(`http://localhost:3000/allBooks/${params.id}`),
-                // hydrateFallbackElement:<Loading/>
-            },
-            {
-                path:'update-book/:id',
-                element:<PrivateRoute><UpdateBook></UpdateBook></PrivateRoute>,
-                // loader:({params})=>fetch(`http://localhost:3000/allBooks/${params.id}`),
-                // hydrateFallbackElement:<Loading/>
-            },          
-            {
-                path:'add-books',
-                element:<PrivateRoute><AddBook></AddBook></PrivateRoute>
-            },            
-            {
-                path:'borrowed-books/:email',
-                element:<PrivateRoute><BorrowedBooks></BorrowedBooks></PrivateRoute>,
-                
-                hydrateFallbackElement:<Loading/>
-            },
-            {
-                path:'book-categories/:name',
-                Component:BookCategory,
-                loader:()=>fetch('http://localhost:3000/categoryAllBooks'),
-                hydrateFallbackElement:<Loading/>
-            
-            },
-            {
-                path:'login',
-                Component:Login
-            },
-            {
-                path:'register',
-                Component:Register
-            }
-            
-        ]
-    },
-    {
-        path: '*',
-        element: <ErrorPage/>
-    }
-])
+        hydrateFallbackElement: <Loading />,
+      },
+      {
+        path: "book-categories/:name",
+        Component: BookCategory,
+        loader: () => fetch("http://localhost:3000/categoryAllBooks"),
+        hydrateFallbackElement: <Loading />,
+      },
+      {
+        path: "login",
+        Component: Login,
+      },
+      {
+        path: "register",
+        Component: Register,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
+  },
+]);

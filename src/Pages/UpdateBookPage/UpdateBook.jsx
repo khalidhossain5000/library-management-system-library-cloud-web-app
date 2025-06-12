@@ -1,14 +1,14 @@
 import bgImg from "../../assets/SliderImg/reading-img.jpg";
-import {  useParams } from "react-router";
+import { useParams } from "react-router";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 
 const UpdateBook = () => {
-  const {id}=useParams()
-  const {user}=useAuth()
-  const [existingData,setExistingData]=useState({})
+  const { id } = useParams();
+  const { user } = useAuth();
+  const [existingData, setExistingData] = useState({});
   const {
     title,
     imageUrl,
@@ -20,30 +20,29 @@ const UpdateBook = () => {
     description,
     content,
   } = existingData || {};
- 
+
   //fetching this books singlle data
-  useEffect(()=>{
-    axios(`http://localhost:3000/allBooks/${id}`,{
-      headers:{
-        authorization:`Bearer ${user?.accessToken}`
-      }
+  useEffect(() => {
+    axios(`http://localhost:3000/allBooks/${id}`, {
+      headers: {
+        authorization: `Bearer ${user?.accessToken}`,
+      },
     })
-    .then((res)=>{
-      const data=res.data;
-      console.log(data);
-      setExistingData(data)
-    })
-    .catch(error=>{
-      console.log(error)
-    })
-  },[id])
+      .then((res) => {
+        const data = res.data;
+        console.log(data);
+        setExistingData(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [id]);
   const handleUpdateGroup = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const updatedData = Object.fromEntries(formData.entries());
     updatedData.quantity = parseInt(updatedData.quantity);
-    
 
     //UPDATE DATA STRATS
     axios
@@ -184,9 +183,7 @@ const UpdateBook = () => {
                   className="w-full textarea textarea-xs input shadow-2xl bg-white/10 backdrop-blur-sm text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 !text-xl"
                 ></textarea>
               </fieldset>
-              <div className="return-date">
-                
-              </div>
+              <div className="return-date"></div>
             </div>
 
             <input
