@@ -2,9 +2,11 @@ import React from "react";
 import bgImg from "../../assets/SliderImg/reading-img.jpg";
 import axios from "axios";
 import toast from "react-hot-toast";
+import useAuth from "../../Hooks/useAuth";
 
 
 const AddBook = () => {
+  const {user}=useAuth()
   const handleAddBook = (e) => {
     e.preventDefault();
     const form=e.target;
@@ -14,7 +16,11 @@ const AddBook = () => {
     data.rating=parseInt(data.rating)
     
     //data sending to db
-    axios.post('http://localhost:3000/books',data)
+    axios.post('http://localhost:3000/books',data,{
+      headers:{
+        authorization:`Bearer ${user?.accessToken}`
+      }
+    })
     .then((res)=>{
       if(res.data.insertedId){
         toast.success("Book Added Successfully", {

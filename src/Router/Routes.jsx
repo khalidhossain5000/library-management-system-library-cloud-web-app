@@ -55,7 +55,7 @@ export const router=createBrowserRouter([
             {
                 path:'book-categories/:name',
                 Component:BookCategory,
-                loader:()=>fetch('http://localhost:3000/allBooks'),
+                loader:()=>fetch('http://localhost:3000/categoryAllBooks'),
                 hydrateFallbackElement:<Loading/>
             
             },
