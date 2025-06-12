@@ -1,10 +1,14 @@
 import bgImg from "../../assets/SliderImg/reading-img.jpg";
-import { useLoaderData } from "react-router";
+import {  useParams } from "react-router";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
+import useAuth from "../../Hooks/useAuth";
 
 const UpdateBook = () => {
-  
+  const {id}=useParams()
+  const {user}=useAuth()
+  const [existingData,setExistingData]=useState({})
   const {
     title,
     imageUrl,
@@ -15,8 +19,24 @@ const UpdateBook = () => {
     _id,
     description,
     content,
-  } = useLoaderData();
+  } = existingData || {};
  
+  //fetching this books singlle data
+  useEffect(()=>{
+    axios(`http://localhost:3000/allBooks/${id}`,{
+      headers:{
+        authorization:`Bearer ${user?.accessToken}`
+      }
+    })
+    .then((res)=>{
+      const data=res.data;
+      console.log(data);
+      setExistingData(data)
+    })
+    .catch(error=>{
+      console.log(error)
+    })
+  },[id])
   const handleUpdateGroup = (e) => {
     e.preventDefault();
     const form = e.target;

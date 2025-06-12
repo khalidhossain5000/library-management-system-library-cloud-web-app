@@ -2,6 +2,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
+import useAuth from "../../Hooks/useAuth";
 
 const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
   const {
@@ -15,12 +16,17 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
     returnDate,
     _id,
   } = book;
+  
+  const {user}=useAuth()
 
   const handleReturnBook = (bookId) => {
     //UPDATE QUANTITY API
-    
     axios
-      .patch(`http://localhost:3000/all-books/quantity/${bookId}`)
+      .patch(`http://localhost:3000/all-books/quantity/${bookId}`,{
+        headers:{
+        authorization:`Bearer ${user?.accessToken}`
+      }
+      })
       .then(() => {
        
       })
@@ -31,7 +37,11 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
 
     //DELETE BORROW BOOK API
     axios
-      .delete(`http://localhost:3000/borrowed-books/${_id}`)
+      .delete(`http://localhost:3000/borrowed-books/${_id}`,{
+      headers:{
+        authorization:`Bearer ${user?.accessToken}`
+      }
+    })
       .then((res) => {
         const data = res.data;
         if (data.deletedCount) {

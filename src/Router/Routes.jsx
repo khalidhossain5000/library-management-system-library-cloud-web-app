@@ -39,8 +39,8 @@ export const router=createBrowserRouter([
             {
                 path:'update-book/:id',
                 element:<PrivateRoute><UpdateBook></UpdateBook></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:3000/allBooks/${params.id}`),
-                hydrateFallbackElement:<Loading/>
+                // loader:({params})=>fetch(`http://localhost:3000/allBooks/${params.id}`),
+                // hydrateFallbackElement:<Loading/>
             },          
             {
                 path:'add-books',
