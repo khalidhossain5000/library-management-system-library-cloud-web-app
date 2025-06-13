@@ -7,11 +7,12 @@ const BookCategories = () => {
     const categories=["Computer & Programming","Science-Fiction","Sports & Games","Self-Development & Meditation"]
     
   return (
-    <div className="py-12 lg:py-24 bg-[#F9FAFB]">
+    <div className="py-12 lg:py-24 relative">
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div>
       <h1 className="mb-6 lg:mb-16 text-6xl font-bold text-center text-[#1F2937]">
         Book Categories
       </h1>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-6 lg:py-16">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-6 lg:py-24">
 
         {
           categories.map((cat,i)=><Link key={i} to={`/book-categories/${cat.toLocaleLowerCase()}`}>
