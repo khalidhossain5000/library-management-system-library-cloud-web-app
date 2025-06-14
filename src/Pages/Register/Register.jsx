@@ -1,12 +1,12 @@
 import React, { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
-// import bgImg from '../../assets/SliderImg/img-iiiiii.jpg'
-import bgImg from "../../assets/SliderImg/reading-img.jpg";
+import bgImg from "../../assets/AuthBg/new/monutain-darsk.jpg"
 import toast from "react-hot-toast";
 import { AuthContext } from "../../Context/AuthContext";
 
 const Register = () => {
-  const { createUser, updateUserProfile, setUser, handleGoogleUser } =use(AuthContext);
+  const { createUser, updateUserProfile, setUser, handleGoogleUser } =
+    use(AuthContext);
   const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
   const registerLocation = useLocation();
@@ -144,19 +144,19 @@ const Register = () => {
   return (
     <div
       style={{ backgroundImage: `url(${bgImg})` }}
-      className="py-16 bg-no-repeat bg-cover bg-top"
+      className="py-16 bg-no-repeat bg-cover bg-top "
     >
       <div className="py-24">
-        <div className="container mx-auto">
+        <div className="container mx-auto" >
           <div className="title text-center space-y-2 py-12">
-            <h1 className="text-6xl font-bold text-pink-700 ">
+            <h1 className="text-6xl font-bold text-cyan-200 ">
               Register Your Account Now
             </h1>
-            <h5 className="text-2xl font-semibold text-pink-600 my-6">
+            <h5 className="text-2xl font-semibold text-pink-100 my-6">
               Please enter your details to Register.
             </h5>
           </div>
-          <div className="card w-full max-w-3xl mx-auto inset-shadow-3xl inset-shadow-indigo-500 py-16 border-1 border-pink-100 bg-white/10 backdrop-blur-sm rounded-2xl ">
+          <div className="card w-full max-w-5xl mx-auto inset-shadow-3xl py-16 border-1 border-cyan-300 backdrop-blur-xl rounded-xl " style={{boxShadow:'0 0 30px cyan'}}>
             <div className="card-body">
               <form
                 onSubmit={handleRegister}
@@ -169,7 +169,8 @@ const Register = () => {
                 <input
                   name="name"
                   type="text"
-                  className=" input w-full bg-transparent border border-[#097bfb] rounded-xl p-8 text-black placeholder:text-black focus:border-pink-500 text-xl"
+                  className="w-full py-6 lg:py-8 text-white bg-transparent border-b-2 border-b-cyan-100 focus:outline-none focus:border-cyan-400 text-xl placeholder:text-white"
+                  
                   placeholder="Enter Your Name"
                 />
                 <br />
@@ -180,7 +181,7 @@ const Register = () => {
                 <input
                   name="photo"
                   type="text"
-                  className=" input w-full bg-transparent border border-[#fffeff] rounded-xl p-8 text-white placeholder:text-pink-100 placeholder: focus:border-pink-500 text-xl"
+                  className="w-full py-6 lg:py-8 text-white bg-transparent border-b-2 border-b-cyan-100 focus:outline-none focus:border-cyan-400 text-xl placeholder:text-white"
                   placeholder="Enter Photo Url"
                 />
                 <br />
@@ -191,7 +192,7 @@ const Register = () => {
                 <input
                   name="email"
                   type="email"
-                  className=" input w-full bg-transparent border border-[#fffeff] rounded-xl p-8 text-white placeholder:text-pink-100 placeholder: focus:border-pink-500 text-xl"
+                  className="w-full py-6 lg:py-8 text-white bg-transparent border-b-2 border-b-cyan-100 focus:outline-none focus:border-cyan-400 text-xl placeholder:text-white"
                   placeholder="Enter Your Email"
                 />
                 <br />
@@ -203,21 +204,22 @@ const Register = () => {
                 <input
                   name="password"
                   type="password"
-                  className=" input w-full bg-transparent border border-[#fffeff] rounded-xl p-8 text-white placeholder:text-pink-100 placeholder: focus:border-pink-500 text-xl"
+                  className="w-full py-6 lg:py-8 text-white bg-transparent border-b-2 border-b-cyan-100 focus:outline-none focus:border-cyan-400 text-xl placeholder:text-white"
                   placeholder="Enter Password"
                 />
                 <div className="pt-3 w-full">
-                  <a className="text-left text-[25px] link link-hover text-pink-200">
+                  <a className="text-left text-[25px] link link-hover text-cyan-100">
                     Forgot password?
                   </a>
                 </div>
                 {/* password error */}
                 <div className="py-2 w-full">
-                   {passwordError && (
+                  {passwordError && (
                     <h2 className="text-red-600 text-xl ">{passwordError}</h2>
-                  )} *
+                  )}{" "}
+                  *
                 </div>
-                <button className="btn w-full bg-transparent p-8 border-pink-300 text-xl text-pink-100 rounded-xl mt-4 hover:bg-gradient-to-br hover:from-[#07233c] hover:via-[#1cc0de] hover:to-[#020611] transition duration-700">
+                <button className="btn w-full bg-gradient-to-b from-[#0076ff] via-[#00bfff] to-[#0083ff]  p-8 border-cyan-300 text-xl text-pink-100 rounded-xl mt-4 hover:bg-gradient-to-br hover:from-[#001d16] hover:via-[#00ad82] hover:to-[#1d717e] transition duration-300 hover:scale-105 ease-in-out hover:animate-pulse">
                   Register
                 </button>
               </form>
@@ -262,12 +264,12 @@ const Register = () => {
                 </button>
               </div>
               {/* DONT HAVE ACCOUNT START HERE*/}
-              <div>
-                <h5 className="w-full mx-auto text-2xl font-bold mt-6 text-gray-300">
+              <div className="text-center">
+                <h5 className="w-full  text-2xl font-bold mt-6 text-gray-300">
                   Already have an account?
                   <Link
                     to="/login"
-                    className="text-pink-500 text-3xl font-bold"
+                    className="text-cyan-500 text-3xl font-bold mx-2"
                   >
                     Login
                   </Link>

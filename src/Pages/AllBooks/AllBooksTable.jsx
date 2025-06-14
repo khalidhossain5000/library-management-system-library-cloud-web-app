@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 const AllBooksTable = ({ allBooks, index }) => {
   const {
-    // _id,
+    _id,
     title,
     imageUrl,
     quantity,
@@ -22,8 +22,8 @@ const AllBooksTable = ({ allBooks, index }) => {
       
        
         <tr className="border-b-1 border-b-pink-600 border-r-1 text-[17px] font-normal">
-          <td>{index+1}</td>
-          <td className="border-x-1 border-x-pink-300">
+          <td className="text-pink-100">{index+1}</td>
+          <td className="border-x-1 border-x-pink-300 text-pink-100">
             <div className="flex items-center gap-3">
               <div className="avatar">
                 <div className="mask rounded-2xl h-12 w-12 lg:w-20 lg:h-20">
@@ -54,11 +54,12 @@ const AllBooksTable = ({ allBooks, index }) => {
           <th>
             <div className="space-y-3">
               <Link
-                //   to={`/update-group/${group._id}`}
-                className="btn-warning text-black font-bold btn btn-xs w-full"
-              >
-                Update
-              </Link>
+                      to={`/update-book/${_id}`}
+                      // className=" btn btn-warning font-bold text-black "
+                      className=" bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+                    >
+                      Update
+                    </Link>
               
             </div>
           </th>

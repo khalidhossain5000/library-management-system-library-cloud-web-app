@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 
-import bgImg from "../../assets/SliderImg/new-img.jpg";
+import bgImg from "../../assets/AuthBg/new/monutain-darsk.jpg";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
 
@@ -100,20 +100,20 @@ const LogIn = () => {
   return (
     <div
       style={{ backgroundImage: `url(${bgImg})` }}
-      className="py-16 bg-no-repeat bg-cover bg-top"
+      className=" bg-no-repeat bg-cover bg-top"
     >
       <div className="py-24">
         <div className="container mx-auto ">
           <div className="title text-center space-y-2 py-12">
-            <h3 className="text-2xl font-bold text-gray-300">Welcome Back</h3>
+            <h3 className="text-2xl font-bold text-cyan-300">Welcome Back</h3>
             <h1 className="text-6xl py-6 font-bold text-[#fffaff]">
               Log In your account
             </h1>
-            <h5 className="text-xl font-semibold text-gray-300">
-              Please enter your details to sign in.
+            <h5 className="text-xl font-semibold text-cyan-300 mb-3">
+              Please enter your details to log in.
             </h5>
           </div>
-          <div className=" card w-full max-w-3xl mx-auto inset-shadow-3xl inset-shadow-indigo-500 py-16 border-1 border-pink-100 bg-white/15 backdrop-blur-3xl rounded-2xl ">
+          <div className=" card w-full max-w-3xl mx-auto inset-shadow-3xl inset-shadow-indigo-500 py-16 border-1 border-cyan-300  backdrop-blur-xl rounded-2xl " style={{boxShadow:'0 0 90px cyan'}}>
             <div className="card-body">
               <form
                 onSubmit={handleLogin}
@@ -126,7 +126,7 @@ const LogIn = () => {
                 <input
                   name="email"
                   type="email"
-                  className=" input w-full bg-transparent border border-[#fffeff] rounded-xl p-8 text-white placeholder:text-pink-100 placeholder: focus:border-pink-500 text-xl"
+                  className="w-full py-6 lg:py-8 text-white bg-transparent border-b-2 border-b-cyan-100 focus:outline-none focus:border-cyan-400 text-xl placeholder:text-white"
                   placeholder="Email"
                 />
                 <br />
@@ -137,14 +137,14 @@ const LogIn = () => {
                 <input
                   name="password"
                   type="password"
-                  className=" input w-full bg-transparent border border-[#fffeff] rounded-xl p-8 text-white placeholder:text-pink-100 placeholder: focus:border-pink-500 text-xl"
+                  className="w-full py-6 lg:py-8 text-white bg-transparent border-b-2 border-b-cyan-100 focus:outline-none focus:border-cyan-400 text-xl placeholder:text-white"
                   placeholder="Password"
                 />
                 {/* FORGER PASSWORD  */}
                 <div className="pt-3 w-full">
                   <Link
                     to="/forget-password"
-                    className="text-left text-[25px] link link-hover text-pink-300"
+                    className="text-left text-[25px] link link-hover text-cyan-300"
                   >
                     Forgot password?
                   </Link>
@@ -152,11 +152,11 @@ const LogIn = () => {
                 {/* wrong pass */}
                 <div>
                   {wrongPassword && (
-                    <h2 className="text-xl text-pink-600">{wrongPassword}</h2>
+                    <h2 className="text-xl text-cyan-300">{wrongPassword}</h2>
                   )}
                 </div>{" "}
                 *
-                <button className="btn w-full bg-transparent p-8 border-pink-300 text-xl text-pink-100 rounded-xl mt-4 hover:bg-gradient-to-tl hover:from-[#07233c] hover:via-[#1cc0de] hover:to-[#020611] transition duration-500">
+                <button className="btn w-full bg-gradient-to-b from-[#0076ff] via-[#00bfff] to-[#0083ff]  p-8 border-cyan-300 text-xl text-pink-100 rounded-xl mt-4 hover:bg-gradient-to-br hover:from-[#001d16] hover:via-[#00ad82] hover:to-[#1d717e] transition duration-300 hover:scale-105 ease-in-out hover:animate-pulse">
                   Login
                 </button>
               </form>
@@ -201,13 +201,13 @@ const LogIn = () => {
                 </button>
               </div>
               {/* DONT HAVE ACCOUNT START HERE*/}
-              <div>
+              <div className="text-center">
                 <h5 className="w-full mx-auto text-2xl text-gray-300">
                   Don't have an account?
                   <Link
                     state={{ from: logInLocation.state?.from || "/" }}
                     to="/register"
-                    className="text-pink-600 font-bold"
+                    className="text-cyan-300 mx-2 font-bold"
                   >
                     Register
                   </Link>
