@@ -65,15 +65,22 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
   };
   return (
     <div className="container mx-auto">
-      <div className="card- py-24 shadow-2xl p-6 rounded-2xl bg-slate-200 h-full">
-        <div className="img border border-pink-600 p-2 rounded-xl mx-auto">
-          <img src={imageUrl} alt="" />
-        </div>
-        <h1 className="text-2xl font-bold text-[#1F2937]  py-6">{title}</h1>
-        <h2 className="text-xl font-medium text-[#1F2937] ">
-          Return Date: {returnDate}
+      <div className="p-3 rounded-2xl shadow-2xl bg-gradient-to-br from-[#3e1f91] via-[#121218] to-[#340436]">
+        <div className="p-2 rounded-xl" >
+      <img className="w-56 h-56 mx-auto " src={imageUrl} alt="" />
+      </div>
+        <div className="cntent space-y-6" >
+          <h1 className="text-2xl font-bold text-[#fce6fa]">{title}</h1>
+        <h2 className="font-bold text-white ">
+          Return Date: <span className="text-xl font-bold text-cyan-300">{returnDate}</span>
         </h2>
-        <div className="rtign my-3">
+        <h3 className="font-bold text-white">Quantity : <span className="text-xl font-bold text-cyan-300">{quantity}</span> </h3>
+      <h3 className="font-semibold text-white">Author : <span className=" font-bold text-cyan-300">{author}</span></h3>
+      <h3 className="font-semibold text-white">Category :<span className="font-bold text-cyan-300">{category}</span> </h3>
+        </div>
+
+        <div className="rtign my-3 flex items-center gap-3">
+          <span className="text-xl font-bold text-cyan-300 ">Rating:</span>
           <Rating
             initialRating={rating}
             emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
@@ -82,15 +89,7 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
             readonly
           />
         </div>
-        <h2 className="text-[#1F2937] font-medium text-xl mt-5">
-          Author : {author}
-        </h2>
-        <h2 className="text-[#1F2937] font-medium text-xl my-3">
-          Quantity : {quantity}
-        </h2>
-        <h2 className="text-[#1F2937] font-medium text-xl my-3">
-          Category : {category}
-        </h2>
+        
         <div className="mt-6 ">
           <button
             onClick={() => handleReturnBook(bookId)}

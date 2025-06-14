@@ -75,7 +75,7 @@ const AllBooks = () => {
 
           {/* CARD VIEW CONTAINER  */}
           {view == "card" && (
-            <div className="mt-6 lg:mt-0 bg-gradient-to-br from-[#c0e3f7] via-[#dfc7ea] to-[#c0e3f7] shadow-2xl rounded-md px-2 lg:w-[80%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 ">
+            <div className="mt-6 lg:mt-0 bg-gradient-to-br from-[#c0e3f7] via-[#dfc7ea] to-[#c0e3f7] shadow-2xl rounded-md px-2 lg:w-[80%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 ">
               {allBooks.map((book) => (
                 <AllBooksCard key={book._id} book={book}></AllBooksCard>
               ))}

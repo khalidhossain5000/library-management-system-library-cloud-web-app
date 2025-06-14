@@ -26,7 +26,7 @@ const BorrowedBooks = () => {
       });
   }, [user]);
   return (
-    <div className="py-36 bg-[#F4F6FA]">
+    <div className="py-36 bg-gradient-to-br from-[#c0e3f7] via-[#dfc7ea] to-[#c0e3f7]">
       <h1 className="text-6xl font-bold text-[#1F2937] text-center py-6">
         Total Borrowed Books : {borrowedBooks.length}{" "}
       </h1>
