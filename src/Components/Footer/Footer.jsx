@@ -40,7 +40,7 @@ const Footer = () => {
   );
   return (
     <div className="bg-gradient-to-br relative pt-24">
-      <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#07061a_40%,#321976_100%)]"></div>
+      <div className="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#07061a_40%,#321976_100%)]"></div>
       <div className="">
         <div className="container mx-auto">
           <div className="py-12 content text-center lg:text-left lg:flex  lg:justify-between">

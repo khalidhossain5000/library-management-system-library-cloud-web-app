@@ -37,11 +37,11 @@ const AllBooksTable = ({ allBooks, index }) => {
               <div></div>
             </div>
           </td>
-          <td className="border-x-1 border-x-pink-300">{title}</td>
-          <td className="border-x-1 border-x-pink-300">{quantity}</td>
-          <td className="border-x-1 border-x-pink-300">{author}</td>
-          <td className="border-x-1 border-x-pink-300">{category}</td>
-          <td className="border-x-1 border-x-pink-300"><div className="rtign text-center my-6">
+          <td className="border-x-1 border-x-pink-300 text-pink-100">{title}</td>
+          <td className="border-x-1 border-x-pink-300 text-pink-100">{quantity}</td>
+          <td className="border-x-1 border-x-pink-300 text-pink-100">{author}</td>
+          <td className="border-x-1 border-x-pink-300 text-pink-100">{category}</td>
+          <td className="border-x-1 border-x-pink-300 text-pink-100"><div className="rtign text-center my-6">
             <Rating
               initialRating={rating}
               emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}

@@ -32,13 +32,17 @@ const AllBooksCard = ({ book }) => {
       });
   };
   return (
-    <div className="border-2 p-6 rounded-2xl">
-      <img src={imageUrl} alt="" />
-      <h1>{title}</h1>
-      <h3>Quantity : {quantity}</h3>
-      <h3>Author : {author}</h3>
-      <h3>Category : {category}</h3>
-      <div className="rtign">
+    <div className="p-3 rounded-2xl shadow-2xl bg-gradient-to-br from-[#3e1f91] via-[#121218] to-[#340436]">
+      <div className="imgs shadow-xl p-2 border border-blue-300 rounded-xl">
+      <img className="w-56 h-56 " src={imageUrl} alt="" />
+      </div>
+      <div className="cntstn py-3 lg:py-5 space-y-3">
+          <h1 className="text-2xl font-bold text-[#fce6fa]">{title}</h1>
+      <h3 className="font-bold text-white">Quantity : <span className="text-xl font-bold text-cyan-300">{quantity}</span> </h3>
+      <h3 className="font-semibold text-white">Author : <span className=" font-bold text-cyan-300">{author}</span></h3>
+      <h3 className="font-semibold text-white">Category :<span className="font-bold text-cyan-300">{category}</span> </h3>
+      </div>
+      <div className="rtign space-y-6 lg:space-y-12">
         <Rating
           initialRating={rating}
           emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
@@ -46,13 +50,16 @@ const AllBooksCard = ({ book }) => {
           fractions={2}
           readonly
         />
-      </div>
-      <Link
+
+        <Link
         to={`/update-book/${_id}`}
-        className="mx-6 my-6 btn btn-warning font-bold text-black text-2xl"
+        // className=" btn btn-warning font-bold text-black "
+        className=" bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
       >
         Update
       </Link>
+      </div>
+      
       <button
         onClick={handleDelete}
         className="my-6 mx-6 btn btn-error font-bold text-black text-2xl"
