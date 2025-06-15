@@ -2,57 +2,85 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 import { motion } from "motion/react";
-import img1 from "../../assets/TestimonialImg/1.jpg"
-import img2 from "../../assets/TestimonialImg/img-ii.jpg"
-import img3 from "../../assets/TestimonialImg/img-ig.jpg"
-import img4 from "../../assets/TestimonialImg/img-in.jpg"
-import img5 from "../../assets/TestimonialImg/img-vh.jpg"
+import img1 from "../../assets/TestimonialImg/latest/anther-l.jpg";
+import img2 from "../../assets/TestimonialImg/latest/vg-s.jpg";
+import img3 from "../../assets/TestimonialImg/latest/ii-n.jpg";
+import img4 from "../../assets/TestimonialImg/latest/v-ltstst.jpg";
+import img5 from "../../assets/TestimonialImg/latest/v-lt.jpg";
+import img6 from "../../assets/TestimonialImg/latest/lst-vih.jpg";
 const Testimonial = () => {
   return (
     <div className="py-24 relative">
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] "><div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#d5c5ff,transparent)]"></div></div>  
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] ">
+        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#d5c5ff,transparent)]"></div>
+      </div>
 
       {/* <div class="absolute top-0 z-[-2] h-screen w-screen rotate-180 transform bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"></div> */}
 
-      <h1 className="text-6xl font-bold text-[#1F2937] text-center py-6">
+      <motion.h1
+        animate={{
+          color: [
+            "#111827",
+            "#1f2937",
+            "#374151",
+            "#4b5563",
+            "#0f172a",
+            "#334155",
+            "#3b0764",
+            "#7c3aed",
+            "#131206",
+          ],
+          transition: { duration: 5, repeat: Infinity },
+        }}
+        className="text-6xl font-bold text-[#1F2937] text-center py-6"
+      >
         Testimonials
-      </h1>
+      </motion.h1>
       <h5 className="text-2xl font-semibold text-black text-center pt-6">
         Check out What our user's says about our library!
       </h5>
 
-      <motion.h1
-        initial={{ scale: 0 }}
-        animate={{ scale: 1, transition: { duration: 4 } }}
-        className="text-5xl font-bold"
-      >
-        Remote{" "}
-        <motion.span
-          animate={{
-            color: ["#ff5733", "#33ff33", "#8a33ff"],
-            transition: { duration: 2, repeat: Infinity },
-          }}
-        >
-          Jobs
-        </motion.span>{" "}
-        For you!
-      </motion.h1>
+      
 
-      <div className="mar-container py-48 relative">
+      <div className="mar-container pt-24 pb-24 relative">
         <Marquee
           gradient
-          gradientColor="#bb0af950"
+          gradientColor="#31b8ea30"
           pauseOnHover={true}
           speed={190}
         >
-          
-
           {/* card-1*/}
-          <div className="w-[350px] h-[500px] md:w-[500px] md:h-[500px] mx-6 p-6 md:p-12 rounded-2xl shadow-2xl bg-gradient-to-bl from-[#101203] via-[#211317] to-[#5b1371] relative">
+          <motion.div
+            animate={{
+              scale: [1, 1.05, 1],
+              rotateY: [0, 5, -5, 0],
+              backgroundColor: [
+                "#0e7566",
+                "[#b116e0]",
+                "[#101203]",
+                "#262c33",
+                "#1c073a",
+                "#59113e",
+                "#163349",
+                "#0e7566",
+              ],
+            }}
+            transition={{
+              scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+              rotateY: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+              backgroundColor: {
+                duration: 8,
+                repeat: Infinity,
+                ease: "linear",
+              },
+            }}
+            style={{ transformStyle: "preserve-3d" }}
+            className="my-12 lg:my-24 w-[350px] h-[400px]  md:w-[500px] mx-6 p-6  rounded-2xl shadow-2xl relative "
+          >
             <div className="text-8xl font-bold text-white">❝</div>
             <div className="content">
-              <p className="text-pink-200 md:text-xl md:py-6 py-3">
-                This library system has streamlined how we manage books, track users, and handle overdue items. It's user-friendly and incredibly efficient for daily operations.
+              <p className="text-pink-200 md:text-xl md:py-2 py-3">
+                It's intuitive, responsive, and has streamlined our workflow. We especially appreciate the clear organization of information and the powerful search functionality
               </p>
             </div>
             <div className="im flex items-center justify-center gap-6 lg:gap-12">
@@ -63,19 +91,48 @@ const Testimonial = () => {
               />
 
               <div className="info py-6">
-                <h2 className="text-white text-xl md:text-2xl font-semibold">Alexandra Clark</h2>
-                <h5 className="text-white md:text-xl">Librarian</h5>
-                <h5 className="text-white md:text-xl">City Central Library</h5>
+                <h2 className="text-white text-xl md:text-2xl font-semibold">
+                  Anna Schmidt
+                </h2>
+                <h5 className="text-white md:text-xl">Professor</h5>
+                <h5 className="text-white md:text-xl">Munich Technical University</h5>
               </div>
             </div>
-          </div>
-
-            {/* card-2*/}
-          <div className="w-[350px] h-[500px] md:w-[500px] md:h-[500px] mx-6 p-6 md:p-12 rounded-2xl shadow-2xl bg-gradient-to-bl from-[#101203] via-[#340436] to-[#5b1371] ">
-             <div className="text-8xl font-bold text-white">❝</div>
+          </motion.div>{" "}
+          {/* card-2*/}
+          <motion.div
+            animate={{
+              scale: [1, 1.05, 1],
+              rotateY: [0, 5, -5, 0],
+              backgroundColor: [
+                "#1f092b",
+                "#262c33",
+                "#6d2699",
+                "#101203",
+                "#59113e",
+                "#b116e0",
+                "#163349",
+                "#1c073a",
+                "#aa0ae4",
+                "#1f092b",
+              ],
+            }}
+            transition={{
+              scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+              rotateY: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+              backgroundColor: {
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear",
+              },
+            }}
+            style={{ transformStyle: "preserve-3d" }}
+            className="my-12 lg:my-24 w-[350px] h-[400px]  md:w-[500px] mx-6 p-6  rounded-2xl shadow-2xl relative "
+          >
+            <div className="text-8xl font-bold text-white">❝</div>
             <div className="content">
-              <p className="text-pink-200 md:text-xl md:py-6 py-3">
-                Managing our institution's library is so much easier now. The interface is clean, and issuing books takes just seconds with this modern tool.
+              <p className="text-pink-200 md:text-xl md:py-2 py-3">
+                The library is a great resource for our community. It provides access to a wide range of materials and services.It's user-friendly and efficient for daily operations.
               </p>
             </div>
             <div className="im flex items-center justify-center gap-6 lg:gap-12">
@@ -85,20 +142,49 @@ const Testimonial = () => {
                 alt=""
               />
 
-              <div className="info">
-                <h2 className="text-white text-xl md:text-2xl font-semibold">Rezaul Karim</h2>
-                <h5 className="text-white md:text-xl">Assistant Professor</h5>
-                <h5 className="text-white md:text-xl">Green Hill College</h5>
+              <div className="info py-6">
+                <h2 className="text-white text-xl md:text-2xl font-semibold">
+                  Giovanni Bianchi
+                </h2>
+                <h5 className="text-white md:text-xl">Student</h5>
+                <h5 className="text-white md:text-xl">Universidad de Buenos Aires</h5>
               </div>
             </div>
-          </div>
-
-            {/* card-3*/}
-          <div className="w-[350px] h-[500px] md:w-[500px] md:h-[500px] mx-6 p-6 md:p-12 rounded-2xl shadow-2xl bg-gradient-to-br from-[#5c351a] via-[#422519] to-[#160a1d] ">
-             <div className="text-8xl font-bold text-white">❝</div>
+          </motion.div>{" "}
+          {/* card-3*/}
+          <motion.div
+            animate={{
+              scale: [1, 1.05, 1],
+              rotateY: [0, 5, -5, 0],
+              backgroundColor: [
+                "#2e1a29",
+                "#0e7566",
+                "#101203",
+                "#b116e0",
+                "#1c073a",
+                "#262c33",
+                "#6c1681",
+                "#59113e",
+                "#e32971",
+                "#2e1a29",
+              ],
+            }}
+            transition={{
+              scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+              rotateY: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+              backgroundColor: {
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear",
+              },
+            }}
+            style={{ transformStyle: "preserve-3d" }}
+            className="my-12 lg:my-24 w-[350px] h-[400px]  md:w-[500px] mx-6 p-6  rounded-2xl shadow-2xl relative "
+          >
+            <div className="text-8xl font-bold text-white">❝</div>
             <div className="content">
-              <p className="text-pink-200 md:text-xl md:py-6 py-3">
-                "This system reduced our paper dependency drastically. Book returns and new additions are now systematic and fully recorded."
+              <p className="text-pink-200 md:text-xl md:py-2 py-3">
+                The library's system makes it easy to manage my loans and access my account online.
               </p>
             </div>
             <div className="im flex items-center justify-center gap-6 lg:gap-12">
@@ -108,19 +194,49 @@ const Testimonial = () => {
                 alt=""
               />
 
-              <div className="info">
-                <h2 className="text-white text-xl md:text-2xl font-semibold">Nasir Uddin</h2>
-                <h5 className="text-white md:text-xl">Operations Manager</h5>
-                <h5 className="text-white md:text-xl">ReadSmart Foundation</h5>
+              <div className="info py-6">
+                <h2 className="text-white text-xl md:text-2xl font-semibold">
+                  Pavel Novak
+                </h2>
+                <h5 className="text-white md:text-xl">Professor</h5>
+                <h5 className="text-white md:text-xl">Melbourne University</h5>
               </div>
             </div>
-          </div>
+          </motion.div>{" "}
           {/* card-4*/}
-          <div className="w-[350px] h-[500px] md:w-[500px] md:h-[500px] mx-6 p-6 md:p-12 rounded-2xl shadow-2xl bg-gradient-to-br from-[#135656] via-[#102a34] to-[#111327] ">
-             <div className="text-8xl font-bold text-white">❝</div>
+          <motion.div
+            animate={{
+              scale: [1, 1.05, 1],
+              rotateY: [0, 5, -5, 0],
+              backgroundColor: [
+                "#120d03",
+                "#101203",
+                "#878787",
+                "#b116e0",
+                "#1c073a",
+                "#262c33",
+                "#163349",
+                "#59113e",
+                "#441539",
+                "#120d03",
+              ],
+            }}
+            transition={{
+              scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+              rotateY: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+              backgroundColor: {
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear",
+              },
+            }}
+            style={{ transformStyle: "preserve-3d" }}
+            className="my-12 lg:my-24 w-[350px] h-[400px]  md:w-[500px] mx-6 p-6  rounded-2xl shadow-2xl relative "
+          >
+            <div className="text-8xl font-bold text-white">❝</div>
             <div className="content">
-              <p className="text-pink-200 md:text-xl md:py-6 py-3">
-                "One of the best decisions we made. The system is fast, reliable, and makes our job 10x easier every day."
+              <p className="text-pink-200 md:text-xl md:py-2 py-3">
+                The customer service has been fantastic. Any questions we have are answered quickly and thoroughly.
               </p>
             </div>
             <div className="im flex items-center justify-center gap-6 lg:gap-12">
@@ -130,19 +246,49 @@ const Testimonial = () => {
                 alt=""
               />
 
-              <div className="info">
-                <h2 className="text-white text-xl md:text-2xl font-semibold">Aminul Hoque</h2>
-                <h5 className="text-white md:text-xl">Library In-Charge</h5>
-                <h5 className="text-white md:text-xl">NextGen School</h5>
+              <div className="info py-6">
+                <h2 className="text-white text-xl md:text-2xl font-semibold">
+                  William Harris
+                </h2>
+                <h5 className="text-white md:text-xl">Library IT Specialist</h5>
+                <h5 className="text-white md:text-xl">Buenos Aires City Library</h5>
               </div>
             </div>
-          </div>
+          </motion.div>{" "}
           {/* card-5*/}
-          <div className="w-[350px] h-[500px] md:w-[500px] md:h-[500px] mx-6 p-6 md:p-12 rounded-2xl shadow-2xl bg-gradient-to-br from-[#2a0d69] via-[#190946] to-[#120626] ">
+          <motion.div
+            animate={{
+              scale: [1, 1.05, 1],
+              rotateY: [0, 5, -5, 0],
+              backgroundColor: [
+                "#6050fd",
+                "#b116e0",
+                "#1c073a",
+                "#101203",
+                "#ca4505",
+                "#59113e",
+                "#439934",
+                "#163349",
+                "#bc22d6",
+                "#6050fd",
+              ],
+            }}
+            transition={{
+              scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+              rotateY: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+              backgroundColor: {
+                duration: 25,
+                repeat: Infinity,
+                ease: "linear",
+              },
+            }}
+            style={{ transformStyle: "preserve-3d" }}
+            className="my-12 lg:my-24 w-[350px] h-[400px]  md:w-[500px] mx-6 p-6  rounded-2xl shadow-2xl relative "
+          >
             <div className="text-8xl font-bold text-white">❝</div>
             <div className="content">
-              <p className="text-pink-200 md:text-xl md:py-6 py-3">
-                "No more spreadsheets or manual tracking. This library management app has transformed our resource tracking process completely."
+              <p className="text-pink-200 md:text-xl md:py-2 py-3">
+                Since using LibraryCloud, we've saved a significant amount of time managing our library resources. It's made our daily tasks much more efficient.
               </p>
             </div>
             <div className="im flex items-center justify-center gap-6 lg:gap-12">
@@ -152,15 +298,71 @@ const Testimonial = () => {
                 alt=""
               />
 
-              <div className="info">
-                <h2 className="text-white text-xl md:text-2xl font-semibold">Faisal Chowdhury</h2>
-                <h5 className="text-white md:text-xl">Media & Library Staff</h5>
-                <h5 className="text-white md:text-xl">Global English Institute</h5>
+              <div className="info py-6">
+                <h2 className="text-white text-xl md:text-2xl font-semibold">
+                  James Whitman
+                </h2>
+                <h5 className="text-white md:text-xl">Library Operations Manager</h5>
+                <h5 className="text-white md:text-xl">Lisbon Central Library</h5>
               </div>
             </div>
-          </div>
+          </motion.div>          
+          {/* card-6*/}
+          <motion.div
+            animate={{
+              scale: [1, 1.05, 1],
+              rotateY: [0, 5, -5, 0],
+              backgroundColor: [
+                "#b116e0",
+                "#0e7566",
+                "#262c33",
+                "#101203",
+                "#59113e",
+                "#ffc100",
+                "#1c073a",
+                "#0e7566",
+                "#163349",
+                "#b116e0",
+              ],
+            }}
+            transition={{
+              scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+              rotateY: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+              backgroundColor: {
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear",
+              },
+            }}
+            style={{ transformStyle: "preserve-3d" }}
+            className="my-12 lg:my-24 w-[350px] h-[400px]  md:w-[500px] mx-6 p-6  rounded-2xl shadow-2xl relative "
+          >
+            <div className="text-8xl font-bold text-white">❝</div>
+            <div className="content">
+              <p className="text-pink-200 md:text-xl md:py-2 py-3">
+                The system is very flexible and allows us to grow and expand our collection as needed. The support team is always helpful and responsive to our questions
+              </p>
+            </div>
+            <div className="im flex items-center justify-center gap-6 lg:gap-12">
+              <img
+                className="md:w-22 md:h-22 w-14 h-14 rounded-full"
+                src={img6}
+                alt=""
+              />
+
+              <div className="info py-6">
+                <h2 className="text-white text-xl md:text-2xl font-semibold">
+                  Robert Mathews
+                </h2>
+                <h5 className="text-white md:text-xl">Asst.Professior</h5>
+                <h5 className="text-white md:text-xl">Westbridge University</h5>
+              </div>
+            </div>
+          </motion.div>
         </Marquee>
       </div>
+
+      
     </div>
   );
 };
