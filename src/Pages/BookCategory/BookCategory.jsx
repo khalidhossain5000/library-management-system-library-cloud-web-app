@@ -13,10 +13,10 @@ const BookCategory = () => {
     
     
     return (
-        <div className='py-12 lg:py-24'>
-            <h1 className='mb-6 lg:mb-16 text-6xl font-bold text-center text-[#1F2937]'>Welcome To {name} Categories</h1>
+        <div className='py-12 lg:py-24 bg-gradient-to-br from-[#c0e3f7] via-[#dfc7ea] to-[#c0e3f7]'>
+            <h1 className='mb-6 lg:mb-16 text-3xl md:text-6xl font-bold text-center text-[#1F2937]'>{name} Categories : {categoryBooks.length}</h1>
 
-        <div className='container mx-auto py-12 lg:py-24 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-center items-center'>
+        <div className='container mx-auto py-12 lg:py-24 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-center items-center px-6 lg:px-0'>
             {
                 categoryBooks.map((singleBook)=><CategoryCard
                 singleBook={singleBook}

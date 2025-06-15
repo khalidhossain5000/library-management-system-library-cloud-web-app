@@ -14,43 +14,55 @@ const CategoryCard = ({ singleBook }) => {
     rating,
     //    --->dynamic rating will be added later
   } = singleBook;
-  
+
   return (
-    <div className="flex flex-col h-full p-6 shadow-2xl rounded-xl">
-      <div className="imgs w-full mb-6 lg:mb-8">
-        <img className="w-[200px] mx-auto" src={imageUrl} alt="" />
-      </div>
-      <div className="cntent text-center">
-        <h2 className="text-2xl my-3 text-[#111111] font-bold">{title}</h2>
-        <h3 className="text-xl text-[#1F2937] font-semibold my-3">By : {author}</h3>
-        <h2 className="text-[#1F2937] text-xl font-bold my-4">Category: {category}</h2>
-        <h5 className="text-[#4da94d] font-bold text-xl">Quantity : {quantity}</h5>
+    <div className="flex flex-col justify-between h-full p-3 rounded-2xl shadow-2xl bg-gradient-to-br from-[#3e1f91] via-[#121218] to-[#340436]">
+    
+          <div className="imgs shadow-xl p-2 border border-blue-300 rounded-xl">
+            <img className="w-56 h-56 " src={imageUrl} alt="" />
+          </div>
+    
+          <div className="cntstn py-3 lg:py-5 space-y-3">
+            <h1 className="text-2xl font-bold text-[#fce6fa]">{title}</h1>
+            <h3 className="font-bold text-white">
+              Quantity :{" "}
+              <span className="text-xl font-bold text-cyan-300">{quantity}</span>{" "}
+            </h3>
+            <h3 className="font-semibold text-white">
+              Author : <span className=" font-bold text-cyan-300">{author}</span>
+            </h3>
+            <h3 className="font-semibold text-white">
+              Category :<span className="font-bold text-cyan-300">{category}</span>{" "}
+            </h3>
+          </div>
+    
+          <div className="text-center py-3 lg:py-6 mt-auto rtign space-y-6 lg:space-y-12">
+            <Rating
+              initialRating={rating}
+              emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
+              fullSymbol={<FaStar className="text-3xl text-yellow-500" />}
+              fractions={2}
+              readonly
+            />
+    
+            <Link
+              to={`/all-books/${_id}`}
+              className="block bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] hover:from-[#7b1892] hover:to-[#131207] hover:text-white text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+            >
+              View Details
+            </Link>
+          </div>
+        </div>
+
         
-      </div>
-      {/* RATING COMPONENT */}
-      {/* <h2 className="text-xl font-bold text-pink700">
-        THIS IS COMPONENT OF RATING:
-      </h2> */}
-      <div className="rtign text-center my-6">
-        <Rating
-          initialRating={rating}
-          emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
-          fullSymbol={<FaStar className="text-3xl text-[#ff9b04]" />}
-          fractions={2}
-          readonly
-        />
-      </div>
-      {/* RATING COMPONENT ENDS */}
-      <div className=" text-center">
-        <Link
-        to={`/all-books/${_id}`}
-        className="btn btn-success font-bold text-black text-center"
-      >
-        View Details
-      </Link>
-      </div>
-    </div>
   );
 };
+
+
+
+
+
+
+
 
 export default CategoryCard;

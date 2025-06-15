@@ -119,46 +119,46 @@ const BookDetails = () => {
       });
   };
   return (
-    <div className="py-24 bg-gradient-to-tr from-[#010313] to-[#0f7366]">
-      <h2 className="text-6xl font-bold text-[#1F2937] text-center py-6">
+    <div className="py-12 lg:py-24 bg-gradient-to-br from-[#c0e3f7] via-[#dfc7ea] to-[#c0e3f7] ">
+      <h2 className="text-3xl md:text-6xl font-bold text-[#1F2937] text-center py-6">
         Book Details of : {title}
       </h2>
 
-      <div className="container mx-auto py-24 flex  justify-center gap-12">
-        <div className="imgs border border-pink-200 rounded-2xl p-6 !h-full bg-pink-600">
-          <img className="" src={imageUrl} alt="" />
+      <div className="container mx-auto py-24 lg:flex justify-center gap-12">
+        <div className="imgs rounded-2xl p-6 !h-full shadow-xl shadow-cyan-500">
+          <img className="lg:w-96" src={imageUrl} alt="" />
         </div>
 
-        <div className="contnt border border-amber-300 rounded-2xl  p-9 w-full space-y-2">
-          <h1 className="text-3xl font-bold text-[#fdfffe]">{title}</h1>
-          <h2 className="text-xl font-semibold text-pink-300 py-6">
+        <div className="contnt shadow-xl shadow-cyan-500 rounded-2xl  p-9 w-full space-y-2">
+          <h1 className="text-3xl font-bold text-[#1f2937]">{title}</h1>
+          <h2 className="text-xl font-semibold text-[#1f2937] py-6">
             By : {author}
           </h2>
-          <h2 className="text-xl font-semibold text-pink-300 ">
+          <h2 className="text-xl font-semibold text-[#1f2937] lg:py-3">
             Category : {category}
           </h2>
-          <div className="rtign">
+          <div className="rtign lg:py-3">
             <Rating
               initialRating={rating}
-              emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
+              emptySymbol={<FaRegStar className="text-3xl text-yellow-600" />}
               fullSymbol={<FaStar className="text-3xl text-yellow-500" />}
               fractions={2}
               readonly
             />
           </div>
-          <p className="text-xl font-semibold text-white ">
+          <p className="text-xl font-semibold text-[#1f2937] ">
             Description : {description}
           </p>
-          <h2 className="text-2xl font-bold text-fuchsia-500">
+          <h2 className="text-2xl font-bold text-[#1f2937]">
             Quantity : {quantity}
           </h2>
-          <p className="text-3xl font-semibold text-pink-100 ">
+          <p className="text-3xl font-semibold text-[#1f2937] ">
             Content of Books : {content}
           </p>
           <div className="text-center">
             <button
               onClick={openModal}
-              className={`w-9/12 mt-6 btn btn-info text-black font-bold text-2xl py-8`}
+              className="w-9/12 my-6 bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] hover:from-[#7b1892] hover:to-[#131207] hover:text-white text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
               disabled={quantity <= 0}
             >
               Borrow
@@ -176,48 +176,53 @@ const BookDetails = () => {
         // style={customStyles}
         contentLabel="Example Modal"
         overlayClassName="fixed inset-0 bg-black/30 flex justify-center items-center"
-        className="w-8/12 bg-gradient-to-br from-[#1a0830] to-[#00163d] h-6/12"
+        className="w-8/12 bg-gradient-to-br from-[#dfd4ff] via-[#ab8ef6] to-[#fdeaf7] h-6/12 p-6 lg:p-12 rounded-xl shadow-2xl relative"
       >
-        <h1 className="text-3xl font-bold text-pink-600 text-center">
-          WELCOME TO BORROW A BOOK
+        <h1 className="text-3xl lg:text-5xl font-bold text-[#1f2937] text-center">
+          Select A Return Date To Borrow A Book
         </h1>
         <button
           onClick={closeModal}
-          className="btn btn-warning text-black font-bold"
+          className="btn btn-lg btn-error text-black font-bold absolute top-0 right-0"
         >
-          close
+          Close
         </button>
-        <DatePicker
-          onChange={(date) => {
-            const formattedDate = date.toISOString().split("T")[0];
-            setReturnDate(formattedDate);
-          }}
-          // value={new Date()}
-          selected={returnDate}
-          placeholderText="Select a date between today and 5 days in the future"
-          className="w-full lg:py-3 text-white px-5 lg:text-xl lg:font-bold"
-        />
-        <input
-          className="input bg-pink-500 text-white font-bold rounded-2xl w-9/12 mx-auto flex justify-center"
-          type="text"
-          name=""
-          defaultValue={user?.displayName}
-          readOnly
-        />
-        <input
-          className="input bg-pink-500 text-white font-bold rounded-2xl w-9/12 mx-auto flex justify-center"
-          type="email"
-          name=""
-          defaultValue={user?.email}
-          readOnly
-        />
-        <input
+        <div className="py-3 mt-6 text-center">
+          <DatePicker
+            onChange={(date) => {
+              const formattedDate = date.toISOString().split("T")[0];
+              setReturnDate(formattedDate);
+            }}
+            // value={new Date()}
+            selected={returnDate}
+            placeholderText="Select a Return Date"
+            className="w-full lg:py-3 text-white px-5 lg:text-xl lg:font-bold bg-[#1571b5] rounded-xl"
+          />
+        </div>
+        <div className="mx-auto text-center space-y-6 mt-6">
+          <input
+            className="input w-9/12 mx-auto shadow-2xl bg-[#1571b5] backdrop-blur-sm text-pink-100 border-2 border-cyan-300 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl focus:shadow-2xl focus:shadow-cyan-300"
+            type="text"
+            name=""
+            defaultValue={user?.displayName}
+            readOnly
+          />
+          <input
+            className="input w-9/12 mx-auto shadow-2xl bg-[#1571b5] backdrop-blur-sm text-pink-100 border-2 border-cyan-300 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl focus:shadow-2xl focus:shadow-cyan-300"
+            type="email"
+            name=""
+            defaultValue={user?.email}
+            readOnly
+          />
+          <input
           disabled={quantity <= 0}
           onClick={handleBorrowBook}
           type="submit"
           value="Submit"
-          className={`btn btn-success font-bold text-black text-2xl `}
+           className="w-9/12 bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] hover:from-[#7b1892] hover:to-[#131207] hover:text-white text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
         />
+        </div>
+        
       </Modal>
 
       {/* modal end */}
