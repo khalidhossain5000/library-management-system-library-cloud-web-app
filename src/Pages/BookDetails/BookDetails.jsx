@@ -32,7 +32,7 @@ const BookDetails = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [id]);
+  }, [id,user?.accessToken]);
   //data loading use effect ends
   // MODAL RELATED FUNC
   const openModal = () => {
@@ -43,6 +43,7 @@ const BookDetails = () => {
   const closeModal = () => {
     setModalIsOpen(false);
   };
+  Modal.setAppElement('#root');
   // MODAL RELATED FUNC ENDS
 
   const {
@@ -168,7 +169,7 @@ const BookDetails = () => {
       </div>
 
       {/* modal start */}
-
+gi
       <Modal
         isOpen={modalIsOpen}
         // onAfterOpen={afterOpenModal}
@@ -176,16 +177,16 @@ const BookDetails = () => {
         // style={customStyles}
         contentLabel="Example Modal"
         overlayClassName="fixed inset-0 bg-black/30 flex justify-center items-center"
-        className="w-8/12 bg-gradient-to-br from-[#dfd4ff] via-[#ab8ef6] to-[#fdeaf7] h-6/12 p-6 lg:p-12 rounded-xl shadow-2xl relative"
+        className="m-2 lg:m-0 lg:w-8/12 bg-gradient-to-br from-[#dfd4ff] via-[#ab8ef6] to-[#fdeaf7] lg:h-6/12 p-6 lg:p-12 rounded-xl shadow-2xl relative"
       >
-        <h1 className="text-3xl lg:text-5xl font-bold text-[#1f2937] text-center">
+        <h1 className="md:text-3xl lg:text-5xl font-bold text-[#1f2937] text-center">
           Select A Return Date To Borrow A Book
         </h1>
         <button
           onClick={closeModal}
-          className="btn btn-lg btn-error text-black font-bold absolute top-0 right-0"
+          className="btn btn-sm lg:btn-lg btn-error text-black font-bold absolute top-0 right-0"
         >
-          Close
+          X
         </button>
         <div className="py-3 mt-6 text-center">
           <DatePicker
@@ -196,19 +197,19 @@ const BookDetails = () => {
             // value={new Date()}
             selected={returnDate}
             placeholderText="Select a Return Date"
-            className="w-full lg:py-3 text-white px-5 lg:text-xl lg:font-bold bg-[#1571b5] rounded-xl"
+            className="lg:w-full lg:py-3 text-white px-5 lg:text-xl lg:font-bold bg-[#1571b5] rounded-xl"
           />
         </div>
         <div className="mx-auto text-center space-y-6 mt-6">
           <input
-            className="input w-9/12 mx-auto shadow-2xl bg-[#1571b5] backdrop-blur-sm text-pink-100 border-2 border-cyan-300 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl focus:shadow-2xl focus:shadow-cyan-300"
+            className="input lg:w-9/12 mx-auto shadow-2xl bg-[#1571b5] backdrop-blur-sm text-pink-100 border-2 border-cyan-300 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl focus:shadow-2xl focus:shadow-cyan-300"
             type="text"
             name=""
             defaultValue={user?.displayName}
             readOnly
           />
           <input
-            className="input w-9/12 mx-auto shadow-2xl bg-[#1571b5] backdrop-blur-sm text-pink-100 border-2 border-cyan-300 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl focus:shadow-2xl focus:shadow-cyan-300"
+            className="input lg:w-9/12 mx-auto shadow-2xl bg-[#1571b5] backdrop-blur-sm text-pink-100 border-2 border-cyan-300 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl focus:shadow-2xl focus:shadow-cyan-300"
             type="email"
             name=""
             defaultValue={user?.email}
