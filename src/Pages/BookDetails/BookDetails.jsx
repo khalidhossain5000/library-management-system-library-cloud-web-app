@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 import Modal from "react-modal";
 import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
+import ReactStars from "react-rating-stars-component";
 
 const BookDetails = () => {
   // const data = useLoaderData();
@@ -146,6 +147,7 @@ const BookDetails = () => {
               fractions={2}
               readonly
             />
+            
           </div>
           <p className="text-xl font-semibold text-[#1f2937] ">
             Description : {description}
