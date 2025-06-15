@@ -1,14 +1,8 @@
 import React from "react";
-// import bgImg from "../../assets/SliderImg/reading-img.jpg";
-// import bgImg from "../../assets/AddUpdateBg/stock-id.jpg";
-// import bgImg from "../../assets/AddUpdateBg/nisfd.jpg";
 // import bgImg from "../../assets/AddUpdateBg/night-natures.jpg";-->more prefrable
-// import bgImg from "../../assets/AddUpdateBg/another-bg.jpg";
-// import bgImg from "../../assets/AddUpdateBg/bg-i.jpg";
-// import bgImg from "../../assets/AddUpdateBg/lib-gp.png"; -->more perfect one
+
 import bgImg from "../../assets/AddUpdateBg/lib-img-ii.jpg";
-// import bgImg from "../../assets/AddUpdateBg/library=i.jpg";----> this also good
-// import bgImg from "../../assets/AddUpdateBg/mntain-campsite.jpg";
+
 import axios from "axios";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
