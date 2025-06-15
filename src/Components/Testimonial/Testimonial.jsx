@@ -8,6 +8,7 @@ import img3 from "../../assets/TestimonialImg/latest/ii-n.jpg";
 import img4 from "../../assets/TestimonialImg/latest/v-ltstst.jpg";
 import img5 from "../../assets/TestimonialImg/latest/v-lt.jpg";
 import img6 from "../../assets/TestimonialImg/latest/lst-vih.jpg";
+
 const Testimonial = () => {
   return (
     <div className="py-24 relative">
@@ -15,6 +16,7 @@ const Testimonial = () => {
         <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#d5c5ff,transparent)]"></div>
       </div>
 
+    
       {/* <div class="absolute top-0 z-[-2] h-screen w-screen rotate-180 transform bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"></div> */}
 
       <motion.h1

@@ -33,11 +33,11 @@ const Slider = () => {
             {/* text and black overlay */}
             <div className="absolute inset-0 bg-[#0000008b] flex flex-col justify-center items-center text-center p-6">
               
-                <h2 className="lg:text-6xl font-bold text-[#feecff]">
+                <h2 className="lg:text-6xl font-bold text-cyan-300">
                   Welcome To LibraryCloud:A Library Management System.
                 </h2>
               
-              <h5 className="lg:text-2xl font-medium text-[#fef0ff] w-full lg:w-6/12 mx-auto mt-9">
+              <h5 className="lg:text-2xl font-medium text-cyan-100 w-full lg:w-6/12 mx-auto mt-9">
                 LibraryCloud is an awesome library management system.It is a platform where people can discover thousands of books,can borrow the books by creating an account and return it.
                 
               </h5>
@@ -55,11 +55,11 @@ const Slider = () => {
             {/* text and black overlay */}
             <div className="absolute inset-0 bg-[#0000008b] flex flex-col justify-center items-center text-center p-6">
               
-                <h2 className="lg:text-6xl font-bold text-[#fef0ff]">
+                <h2 className="lg:text-6xl font-bold text-cyan-300">
                   Unlock The World Of Knowledge.
                 </h2>
               
-              <h5 className="lg:text-xl font-medium text-[#fef0ff] w-full lg:w-6/12 mx-auto mt-9">
+              <h5 className="lg:text-xl font-medium text-cyan-100 w-full lg:w-6/12 mx-auto mt-9">
                 Explore thousands of books on our website.Efficient, fast, and user-friendly system for modern libraries.
               </h5>
             </div>
@@ -76,11 +76,11 @@ const Slider = () => {
             {/* text and black overlay */}
             <div className="absolute inset-0 bg-[#0000008b] flex flex-col justify-center items-center text-center p-6">
               
-                <h2 className="lg:text-6xl font-bold text-[#feecff]">
+                <h2 className="lg:text-6xl font-bold text-cyan-300">
                   Smart and Faster Library Management System
                 </h2>
            
-              <h5 className="lg:text-xl font-medium text-[#fef0ff] w-full lg:w-6/12 mx-auto mt-9">
+              <h5 className="lg:text-xl font-medium text-cyan-100 w-full lg:w-6/12 mx-auto mt-9">
                 Experience an awesome library management system at your fingerprints.Real time book tracking,member management smarter and faster library.
               </h5>
             </div>
