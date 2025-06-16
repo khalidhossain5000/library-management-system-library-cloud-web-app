@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import error from "../../assets/error-page/error-404.png"
+import { Helmet } from 'react-helmet-async';
 
 
 const ErrorPage = () => {
@@ -8,9 +9,9 @@ const ErrorPage = () => {
 
         <div >
             <div className="dynamic-title">
-               {/* <Helmet>
-                <title>Error-404|</title>
-               </Helmet> */}
+                <Helmet>
+                <title>LibraryCloud | Error-404</title>
+               </Helmet> 
             </div>
             
             <main className='relative py-24 px-2 lg:px-0 bg-gradient-to-br from-[#000626] to-[#4a92ea]'>

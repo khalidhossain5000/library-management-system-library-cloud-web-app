@@ -10,6 +10,7 @@ import Modal from "react-modal";
 import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import ReactStars from "react-rating-stars-component";
+import { Helmet } from "react-helmet-async";
 
 const BookDetails = () => {
   // const data = useLoaderData();
@@ -122,6 +123,11 @@ const BookDetails = () => {
   };
   return (
     <div className="py-12 lg:py-24 bg-gradient-to-br from-[#c0e3f7] via-[#dfc7ea] to-[#c0e3f7] ">
+      <div className="d-title">
+        <Helmet>
+          <title>LibraryCloud | Book-Details</title>
+        </Helmet>
+      </div>
       <h2 className="text-3xl md:text-6xl font-bold text-[#1F2937] text-center py-6">
         Book Details of : {title}
       </h2>

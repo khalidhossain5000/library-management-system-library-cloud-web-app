@@ -6,6 +6,7 @@ import bgImg from "../../assets/AddUpdateBg/lib-img-ii.jpg";
 import axios from "axios";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const AddBook = () => {
   const { user } = useAuth();
@@ -48,6 +49,11 @@ const AddBook = () => {
 
   return (
     <div>
+      <div className="d-title">
+        <Helmet>
+          <title>LibraryCloud | Add-Book</title>
+        </Helmet>
+      </div>
       <main
         style={{ backgroundImage: `url(${bgImg})` }}
         className="bg-cover bg-no-repeat py-36 bg-top"
@@ -60,8 +66,11 @@ const AddBook = () => {
         </h3>
         <section className="lg:max-w-9/12 mx-auto form-full mt-6 lg:mt-0 p-5 lg:p-14">
           <form onSubmit={handleAddBook}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 " >
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Book Title
                 </label>
@@ -72,7 +81,10 @@ const AddBook = () => {
                   placeholder="Enter Your Book Name"
                 />
               </fieldset>
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Book Image URL
                 </label>
@@ -84,7 +96,10 @@ const AddBook = () => {
                 />
               </fieldset>
               {/* quantity */}
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Enter Book Quantity
                 </label>
@@ -97,7 +112,10 @@ const AddBook = () => {
               </fieldset>
               {/* quantity */}
               {/* author name */}
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Author Name
                 </label>
@@ -111,7 +129,10 @@ const AddBook = () => {
               {/* author name */}
 
               {/* Category */}
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Select Book Category
                 </label>
@@ -123,16 +144,23 @@ const AddBook = () => {
                   <option value="" hidden>
                     Select Book Category
                   </option>
-                  <option className="bg-cyan-900 ">Computer & Programming</option>
+                  <option className="bg-cyan-900 ">
+                    Computer & Programming
+                  </option>
                   <option className="bg-cyan-900 ">Science-Fiction</option>
                   <option className="bg-cyan-900 ">Sports & Games</option>
-                  <option className="bg-cyan-900 ">Self-Development & Meditation</option>
+                  <option className="bg-cyan-900 ">
+                    Self-Development & Meditation
+                  </option>
                 </select>
               </fieldset>
               {/* Category */}
 
               {/* descriptions */}
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Add Short Description
                 </label>
@@ -143,7 +171,10 @@ const AddBook = () => {
                 ></textarea>
               </fieldset>
               {/* Rating  */}
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Enter A Rating
                 </label>
@@ -155,7 +186,10 @@ const AddBook = () => {
                   placeholder="Enter a rating"
                 />
               </fieldset>
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Add Book Content
                 </label>

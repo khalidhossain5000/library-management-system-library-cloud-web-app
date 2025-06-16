@@ -3,13 +3,14 @@ import AllBooksCard from "./AllBooksCard";
 import AllBooksTable from "./AllBooksTable";
 import axios from "axios";
 import useAuth from "../../Hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const AllBooks = () => {
   // const allBooks = useLoaderData();
   const [allBooks, setAllBooks] = useState([]);
   // const [filterBooks, setFilterBooks] = useState(allBooks);
   const [view, setView] = useState("card");
-  //AVOIDING LOADER() METHOD AND FETCHING DATA USING USEEFFECT
+
   const { user } = useAuth();
   useEffect(() => {
     axios("https://assignment-11-server-five-lake.vercel.app/allBooks", {
@@ -25,15 +26,19 @@ const AllBooks = () => {
         console.log(error);
       });
   }, [user?.accessToken]);
-  // console.log(allBooks);
-  //AVOIDING LOADER() METHOD AND FETCHING DATA USING USEEFFECT ends here
+
   const handleFilterBooks = () => {
-    // const availableBooks = filterBooks.filter((books) => books.quantity > 0);
+    
     const availableBooks = allBooks.filter((books) => books.quantity > 0);
     setAllBooks(availableBooks);
   };
   return (
     <div className="py-12 lg:py-24 relative border-t border-t-blue-300">
+      <div className="d-title">
+              <Helmet>
+                <title>LibraryCloud | All-Books</title>
+              </Helmet>
+            </div>
       <div className="absolute top-0 -z-10 h-full w-full bg-white">
         <div class="absolute bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px]"></div>
       </div>
