@@ -134,7 +134,7 @@ const BookDetails = () => {
     <div className="py-12 lg:py-24 bg-gradient-to-br from-[#c0e3f7] via-[#dfc7ea] to-[#c0e3f7] ">
       <div className="d-title">
         <Helmet>
-          <title>LibraryCloud | Book-Details</title>
+          <title>Book-Details</title>
         </Helmet>
       </div>
       

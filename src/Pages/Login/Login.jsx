@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import bgImg from "../../assets/AuthBg/monutain-darsk.jpg";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const LogIn = () => {
   const { logInUser, handleGoogleUser } = useAuth();
@@ -29,7 +30,8 @@ const LogIn = () => {
           style: {
             border: "1px solid black",
             color: "white",
-            backgroundImage: "linear-gradient(to bottom right, #31c3df, #3a47d5)"
+            backgroundImage:
+              "linear-gradient(to bottom right, #31c3df, #3a47d5)",
           },
         });
         console.log(result);
@@ -53,7 +55,7 @@ const LogIn = () => {
               "linear-gradient(to bottom right,#0d0518,#87d0c3, #600e8c)",
           },
         });
-        
+
         console.log(error);
       });
   };
@@ -70,7 +72,8 @@ const LogIn = () => {
           style: {
             border: "1px solid black",
             color: "white",
-            backgroundImage: "linear-gradient(to bottom right, #31c3df, #3a47d5)"
+            backgroundImage:
+              "linear-gradient(to bottom right, #31c3df, #3a47d5)",
           },
         });
         // navigate(`${logInLocation.state ? logInLocation.state : "/"}`,{replace:true} );
@@ -101,6 +104,11 @@ const LogIn = () => {
       style={{ backgroundImage: `url(${bgImg})` }}
       className=" bg-no-repeat bg-cover bg-top"
     >
+      <div className="dynamic-title">
+        <Helmet>
+          <title>Login</title>
+        </Helmet>
+      </div>
       <div className="py-24">
         <div className="container mx-auto ">
           <div className="title text-center space-y-2 py-12">
@@ -112,7 +120,10 @@ const LogIn = () => {
               Please enter your details to log in.
             </h5>
           </div>
-          <div className=" card w-full max-w-3xl mx-auto inset-shadow-3xl inset-shadow-indigo-500 py-16 border-1 border-cyan-300  backdrop-blur-xl rounded-2xl " style={{boxShadow:'0 0 90px cyan'}}>
+          <div
+            className=" card w-full max-w-3xl mx-auto inset-shadow-3xl inset-shadow-indigo-500 py-16 border-1 border-cyan-300  backdrop-blur-xl rounded-2xl "
+            style={{ boxShadow: "0 0 90px cyan" }}
+          >
             <div className="card-body">
               <form
                 onSubmit={handleLogin}

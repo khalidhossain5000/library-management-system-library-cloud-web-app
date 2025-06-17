@@ -17,7 +17,7 @@ const BookCategory = () => {
         <div className='py-12 lg:py-24 bg-gradient-to-br from-[#c0e3f7] via-[#dfc7ea] to-[#c0e3f7]'>
             <div className="d-title">
         <Helmet>
-          <title>LibraryCloud | Book-Category</title>
+          <title>Book-Categories</title>
         </Helmet>
       </div>
             <h1 className='mb-6 lg:mb-16 text-3xl md:text-6xl font-bold text-center text-[#1F2937]'>{name} Categories : {categoryBooks.length}</h1>

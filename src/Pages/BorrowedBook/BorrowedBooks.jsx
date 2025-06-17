@@ -36,7 +36,7 @@ const BorrowedBooks = () => {
     <div className="py-36 bg-gradient-to-br from-[#c0e3f7] via-[#dfc7ea] to-[#c0e3f7]">
       <div className="d-title">
         <Helmet>
-          <title>LibraryCloud | Borrowed-Books</title>
+          <title>Borrowed-Books</title>
         </Helmet>
       </div>
       <h1 className="text-6xl font-bold text-[#1F2937] text-center py-6">

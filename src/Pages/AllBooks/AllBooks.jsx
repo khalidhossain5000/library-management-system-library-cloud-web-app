@@ -44,7 +44,7 @@ const AllBooks = () => {
     <div className="py-12 lg:py-24 relative border-t border-t-blue-300">
       <div className="d-title">
         <Helmet>
-          <title>LibraryCloud | All-Books</title>
+          <title>All-Books</title>
         </Helmet>
       </div>
       <div className="absolute top-0 -z-10 h-full w-full bg-white">

@@ -8,7 +8,7 @@ const ErrorPage = () => {
     <div>
       <div className="dynamic-title">
         <Helmet>
-          <title>LibraryCloud | Error-404</title>
+          <title>Error-404</title>
         </Helmet>
       </div>
 
@@ -28,9 +28,7 @@ const ErrorPage = () => {
             
             
             <Link className="bg-gradient-to-tr from-[#25052e] to-[#7d08ab] text-[#ffffff] font-semibold py-3 px-6  w-full mx-3 lg:mx-0 text-xl lg:text-2xl animate-bounce block rounded-sm shadow-md hover:shadow-xl transition-all duration-300  cursor-pointer" to="/">
-              
                 Back To Home
-              
             </Link>
           </div>
         </div>

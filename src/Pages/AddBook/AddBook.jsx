@@ -52,7 +52,7 @@ const AddBook = () => {
     <div>
       <div className="d-title">
         <Helmet>
-          <title>LibraryCloud | Add-Book</title>
+          <title>Add-Book</title>
         </Helmet>
       </div>
       <main

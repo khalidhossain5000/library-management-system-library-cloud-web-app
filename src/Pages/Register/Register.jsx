@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import bgImg from "../../assets/AuthBg/monutain-darsk.jpg"
 import toast from "react-hot-toast";
 import { AuthContext } from "../../Context/AuthContext";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser, updateUserProfile, setUser, handleGoogleUser } =
@@ -145,6 +146,11 @@ const Register = () => {
       style={{ backgroundImage: `url(${bgImg})` }}
       className="py-16 bg-no-repeat bg-cover bg-top "
     >
+      <div className="dynamic-title">
+              <Helmet>
+                <title>Register</title>
+              </Helmet>
+            </div>
       <div className="py-24">
         <div className="container mx-auto" >
           <div className="title text-center space-y-2 py-12">

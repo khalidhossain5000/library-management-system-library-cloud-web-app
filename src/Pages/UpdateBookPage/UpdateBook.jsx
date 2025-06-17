@@ -1,4 +1,3 @@
-
 import bgImg from "../../assets/AddUpdateBg/bg-i.jpg";
 import { useParams } from "react-router";
 import axios from "axios";
@@ -6,6 +5,7 @@ import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import Loading from "../../Components/Loading/Loading";
+import { Helmet } from "react-helmet-async";
 
 const UpdateBook = () => {
   const { id } = useParams();
@@ -38,7 +38,7 @@ const UpdateBook = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [id,user?.accessToken]);
+  }, [id, user?.accessToken]);
   const handleUpdateGroup = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -58,20 +58,24 @@ const UpdateBook = () => {
           title: "Book has been updated successfully",
           icon: "success",
           theme: "dark",
-          customClass:{
-            popup:'gradient-bg'
-          }
+          customClass: {
+            popup: "gradient-bg",
+          },
         });
       })
       .catch((error) => {
         console.log(error);
       });
   };
-  
-  if(!category) return <Loading/>
+
+  if (!category) return <Loading />;
   return (
     <div>
-    
+      <div className="dynamic-title">
+        <Helmet>
+          <title>Update-Book</title>
+        </Helmet>
+      </div>
       <main
         style={{ backgroundImage: `url(${bgImg})` }}
         className="bg-cover bg-no-repeat py-36 bg-top"
@@ -84,8 +88,11 @@ const UpdateBook = () => {
         </h3>
         <section className="lg:max-w-9/12 mx-auto form-full mt-6 lg:mt-0 p-5 lg:p-14">
           <form onSubmit={handleUpdateGroup}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 " >
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Book Title
                 </label>
@@ -96,7 +103,10 @@ const UpdateBook = () => {
                   defaultValue={title}
                 />
               </fieldset>
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Book Image URL
                 </label>
@@ -108,7 +118,10 @@ const UpdateBook = () => {
                 />
               </fieldset>
               {/* quantity */}
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Enter Book Quantity
                 </label>
@@ -121,7 +134,10 @@ const UpdateBook = () => {
               </fieldset>
               {/* quantity */}
               {/* author name */}
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Author Name
                 </label>
@@ -135,7 +151,10 @@ const UpdateBook = () => {
               {/* author name */}
 
               {/* Category */}
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Select Book Category
                 </label>
@@ -148,16 +167,23 @@ const UpdateBook = () => {
                   <option value="" hidden>
                     Select Book Category
                   </option>
-                  <option className="bg-cyan-900 ">Computer & Programming</option>
-                  <option className="bg-cyan-900 " >Science-Fiction</option>
-                  <option className="bg-cyan-900 " >Sports & Games</option>
-                  <option className="bg-cyan-900 " >Self-Development & Meditation</option>
+                  <option className="bg-cyan-900 ">
+                    Computer & Programming
+                  </option>
+                  <option className="bg-cyan-900 ">Science-Fiction</option>
+                  <option className="bg-cyan-900 ">Sports & Games</option>
+                  <option className="bg-cyan-900 ">
+                    Self-Development & Meditation
+                  </option>
                 </select>
               </fieldset>
               {/* Category */}
 
               {/* descriptions */}
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Add Short Description
                 </label>
@@ -168,7 +194,10 @@ const UpdateBook = () => {
                 ></textarea>
               </fieldset>
               {/* Rating  */}
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Enter A Rating
                 </label>
@@ -180,7 +209,10 @@ const UpdateBook = () => {
                   defaultValue={rating}
                 />
               </fieldset>
-              <fieldset className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 " style={{boxShadow:'0 0 10px #00a9e8'}}>
+              <fieldset
+                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                style={{ boxShadow: "0 0 10px #00a9e8" }}
+              >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Add Book Content
                 </label>
