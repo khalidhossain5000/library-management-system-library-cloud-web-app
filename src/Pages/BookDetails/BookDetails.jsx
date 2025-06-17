@@ -126,7 +126,7 @@ const BookDetails = () => {
         } else {
           console.log("Borrow error occurred");
         }
-        // alert("Borrow book error occured");
+        
       });
   };
   

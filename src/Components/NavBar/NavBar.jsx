@@ -32,13 +32,13 @@ const NavBar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/all-books">All Books (p)</NavLink>
+        <NavLink to="/all-books">All Books </NavLink>
       </li>
       <li>
-        <NavLink to="/add-books">Add Book (p)</NavLink>
+        <NavLink to="/add-books">Add Book </NavLink>
       </li>
       <li>
-        <NavLink to="/borrowed-books/:email">Borrowed Book (p)</NavLink>
+        <NavLink to="/borrowed-books/:email">Borrowed Book </NavLink>
       </li>
 
       {user ? (
@@ -61,10 +61,10 @@ const NavBar = () => {
         <>
           
           <li>
-            <NavLink to="/login">Login (c)</NavLink>
+            <NavLink to="/login">Login </NavLink>
           </li>
           <li>
-            <NavLink to="/register">Register (c)</NavLink>
+            <NavLink to="/register">Register </NavLink>
           </li>
         </>
       )}

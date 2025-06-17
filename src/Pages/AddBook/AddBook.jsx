@@ -89,6 +89,7 @@ const AddBook = () => {
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Book Image URL
                 </label>
+                <input type="file" name="image" accept="image/*" required />
                 <input
                   type="url"
                   name="imageUrl"
@@ -106,6 +107,7 @@ const AddBook = () => {
                 </label>
                 <input
                   type="number"
+                  min='0'
                   name="quantity"
                   className="input w-full shadow-2xl bg-[#31b8ea20] backdrop-blur-sm text-pink-100 border-2 border-cyan-300 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl focus:shadow-2xl focus:shadow-cyan-300"
                   placeholder="Max Members"

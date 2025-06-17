@@ -16,11 +16,11 @@ const UpdateBook = () => {
     imageUrl,
     rating,
     author,
-    quantity,
+    // quantity,
     category,
     _id,
-    description,
-    content,
+    // description,
+    // content,
   } = existingData || {};
 
   //fetching this books singlle data
@@ -118,20 +118,7 @@ const UpdateBook = () => {
                 />
               </fieldset>
               {/* quantity */}
-              <fieldset
-                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
-                style={{ boxShadow: "0 0 10px #00a9e8" }}
-              >
-                <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
-                  Enter Book Quantity
-                </label>
-                <input
-                  type="number"
-                  name="quantity"
-                  className="input w-full shadow-2xl bg-[#31b8ea20] backdrop-blur-sm text-pink-100 border-2 border-cyan-300 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl focus:shadow-2xl focus:shadow-cyan-300"
-                  defaultValue={quantity}
-                />
-              </fieldset>
+              
               {/* quantity */}
               {/* author name */}
               <fieldset
@@ -179,23 +166,10 @@ const UpdateBook = () => {
               </fieldset>
               {/* Category */}
 
-              {/* descriptions */}
-              <fieldset
-                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
-                style={{ boxShadow: "0 0 10px #00a9e8" }}
-              >
-                <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
-                  Add Short Description
-                </label>
-                <textarea
-                  name="description"
-                  defaultValue={description}
-                  className="w-full textarea textarea-xs input shadow-2xl bg-[#31b8ea20] backdrop-blur-md text-cyan-100 border-2 border-cyan-300 py-7 placeholder:text-[17px] placeholder:text-white focus:shadow-2xl focus:shadow-cyan-300 !text-xl"
-                ></textarea>
-              </fieldset>
+              
               {/* Rating  */}
               <fieldset
-                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
+                className="col-span-1 backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
                 style={{ boxShadow: "0 0 10px #00a9e8" }}
               >
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
@@ -209,19 +183,7 @@ const UpdateBook = () => {
                   defaultValue={rating}
                 />
               </fieldset>
-              <fieldset
-                className=" backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
-                style={{ boxShadow: "0 0 10px #00a9e8" }}
-              >
-                <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
-                  Add Book Content
-                </label>
-                <textarea
-                  name="content"
-                  defaultValue={content}
-                  className="w-full textarea textarea-xs input shadow-2xl bg-[#31b8ea20] backdrop-blur-md text-cyan-100 border-2 border-cyan-300 py-7 placeholder:text-[17px] placeholder:text-white focus:shadow-2xl focus:shadow-cyan-300 !text-xl"
-                ></textarea>
-              </fieldset>
+             
             </div>
 
             <input
