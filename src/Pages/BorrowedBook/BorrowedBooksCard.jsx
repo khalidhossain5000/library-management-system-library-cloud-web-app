@@ -70,7 +70,7 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
   return (
     <div className="container mx-auto">
      
-      <div className="p-3 rounded-2xl shadow-2xl bg-gradient-to-br from-[#fee8f7] via-[#f1e6fd] to-[#e0d4ff]">
+      <div className="h-full p-3 rounded-2xl shadow-2xl bg-gradient-to-br from-[#fee8f7] via-[#f1e6fd] to-[#e0d4ff]">
         <div className="p-2 rounded-xl mx-auto shadow-xl shadow-cyan-200 " >
       <img className="w-56 h-56 mx-auto " src={imageUrl} alt="" />
       </div>
@@ -79,7 +79,7 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
         <h2 className="font-bold text-2xl text-black ">
           Return Date: <span className="text-xl font-bold text-cyan-700">{returnDate}</span>
         </h2>
-        <h3 className="font-bold text-black">Quantity : <span className="text-xl font-bold text-cyan-700">{quantity}</span> </h3>
+        <h3 className="font-bold text-black">Quantity : <span className="text-xl lg:text-[17px] font-bold text-cyan-700">{quantity}</span> </h3>
       <h3 className="font-bold text-black">Author : <span className=" font-bold text-cyan-700">{author}</span></h3>
       <h3 className="font-bold text-black">Category :<span className="font-bold text-cyan-700">{category}</span> </h3>
         </div>

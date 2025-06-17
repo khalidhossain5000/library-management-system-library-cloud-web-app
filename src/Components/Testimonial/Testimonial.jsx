@@ -87,7 +87,7 @@ const Testimonial = () => {
             style={{ transformStyle: "preserve-3d" }}
             className="my-12 lg:my-24 w-[350px] h-[400px]  md:w-[500px] mx-6 p-6  rounded-2xl shadow-2xl relative "
           >
-            <div className="text-8xl font-bold text-white">❝</div>
+            <div className="text-5xl lg:text-8xl font-bold text-white">❝</div>
             <div className="content">
               <p className="text-pink-200 md:text-xl md:py-2 py-3">
                 It's intuitive, responsive, and has streamlined our workflow. We especially appreciate the clear organization of information and the powerful search functionality
@@ -139,7 +139,7 @@ const Testimonial = () => {
             style={{ transformStyle: "preserve-3d" }}
             className="my-12 lg:my-24 w-[350px] h-[400px]  md:w-[500px] mx-6 p-6  rounded-2xl shadow-2xl relative "
           >
-            <div className="text-8xl font-bold text-white">❝</div>
+            <div className="text-5xl lg:text-8xl font-bold text-white">❝</div>
             <div className="content">
               <p className="text-pink-200 md:text-xl md:py-2 py-3">
                 The library is a great resource for our community. It provides access to a wide range of materials and services.It's user-friendly and efficient for daily operations.
@@ -191,7 +191,7 @@ const Testimonial = () => {
             style={{ transformStyle: "preserve-3d" }}
             className="my-12 lg:my-24 w-[350px] h-[400px]  md:w-[500px] mx-6 p-6  rounded-2xl shadow-2xl relative "
           >
-            <div className="text-8xl font-bold text-white">❝</div>
+            <div className="text-5xl lg:text-8xl font-bold text-white">❝</div>
             <div className="content">
               <p className="text-pink-200 md:text-xl md:py-2 py-3">
                 The library's system makes it easy to manage my loans and access my account online.
@@ -243,7 +243,7 @@ const Testimonial = () => {
             style={{ transformStyle: "preserve-3d" }}
             className="my-12 lg:my-24 w-[350px] h-[400px]  md:w-[500px] mx-6 p-6  rounded-2xl shadow-2xl relative "
           >
-            <div className="text-8xl font-bold text-white">❝</div>
+            <div className="text-5xl lg:text-8xl font-bold text-white">❝</div>
             <div className="content">
               <p className="text-pink-200 md:text-xl md:py-2 py-3">
                 The customer service has been fantastic. Any questions we have are answered quickly and thoroughly.
@@ -293,9 +293,9 @@ const Testimonial = () => {
               },
             }}
             style={{ transformStyle: "preserve-3d" }}
-            className="my-12 lg:my-24 w-[350px] h-[400px]  md:w-[500px] mx-6 p-6  rounded-2xl shadow-2xl relative "
+            className="my-12 lg:my-24 w-[350px] h-[400px]  md:w-[500px] mx-3 p-3 lg:mx-6 lg:p-6  rounded-2xl shadow-2xl relative "
           >
-            <div className="text-8xl font-bold text-white">❝</div>
+            <div className="text-5xl lg:text-8xl font-bold text-white">❝</div>
             <div className="content">
               <p className="text-pink-200 md:text-xl md:py-2 py-3">
                 Since using LibraryCloud, we've saved a significant amount of time managing our library resources. It's made our daily tasks much more efficient.
@@ -347,7 +347,7 @@ const Testimonial = () => {
             style={{ transformStyle: "preserve-3d" }}
             className="my-12 lg:my-24 w-[350px] h-[400px]  md:w-[500px] mx-6 p-6  rounded-2xl shadow-2xl relative "
           >
-            <div className="text-8xl font-bold text-white">❝</div>
+            <div className="text-5xl lg:text-8xl font-bold text-white">❝</div>
             <div className="content">
               <p className="text-pink-200 md:text-xl md:py-2 py-3">
                 The system is very flexible and allows us to grow and expand our collection as needed. The support team is always helpful and responsive to our questions

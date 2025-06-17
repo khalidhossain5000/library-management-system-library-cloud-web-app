@@ -144,7 +144,7 @@ const BookDetails = () => {
 
       <div className="container mx-auto py-24 lg:flex justify-center gap-12">
         <div className="imgs rounded-2xl p-6 !h-full shadow-xl shadow-cyan-500">
-          <img className="lg:w-96" src={imageUrl} alt="" />
+          <img className="lg:w-96 mx-auto w-56" src={imageUrl} alt="" />
         </div>
 
         <div className="contnt shadow-xl shadow-cyan-500 rounded-2xl  p-9 w-full space-y-2">

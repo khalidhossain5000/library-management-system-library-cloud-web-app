@@ -33,7 +33,7 @@ const Slider = () => {
             {/* text and black overlay */}
             <div className="absolute inset-0 bg-[#0000008b] flex flex-col justify-center items-center text-center p-6">
               
-                <h2 className="lg:text-6xl font-bold text-white">
+                <h2 className="lg:text-6xl text-3xl font-bold text-white">
                   Welcome To LibraryCloud:A Library Management System.
                 </h2>
               
@@ -55,7 +55,7 @@ const Slider = () => {
             {/* text and black overlay */}
             <div className="absolute inset-0 bg-[#0000008b] flex flex-col justify-center items-center text-center p-6">
               
-                <h2 className="lg:text-6xl font-bold text-white">
+                <h2 className="lg:text-6xl text-3xl  font-bold text-white">
                   Unlock The World Of Knowledge.
                 </h2>
               
@@ -76,7 +76,7 @@ const Slider = () => {
             {/* text and black overlay */}
             <div className="absolute inset-0 bg-[#000000c5] flex flex-col justify-center items-center text-center p-6">
               
-                <h2 className="lg:text-6xl font-bold text-white">
+                <h2 className="lg:text-6xl text-3xl font-bold text-white">
                   Smart and Faster Library Management System
                 </h2>
            

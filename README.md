@@ -1,4 +1,4 @@
-#Project Title: Library Management System
+## Project Title: Library Management System
 
 ## Descriptions:
 
@@ -50,6 +50,7 @@ A well-renowned school requires the development of a Library Management System, 
 - react-spinners
 - sweetalert2
 - swiper 
+- React Helment async
 
 
 **Server:**

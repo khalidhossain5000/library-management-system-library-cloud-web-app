@@ -47,7 +47,7 @@ const BorrowedBooks = () => {
           borrowedBooks.length<=0 && <div><h2 className="text-center py-24 text-3xl font-bold text-black">You Havent Borrowed Any Books Yet!</h2></div>
         }
       </div>
-      <div className="py-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 container mx-auto">
+      <div className="py-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 container mx-auto">
         {borrowedBooks.map((book) => (
           <BorrowedBooksCard
             key={book._id}
