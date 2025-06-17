@@ -15,3 +15,19 @@ a.active{
   
   font-style: normal;
 }
+
+
+
+
+.gradient-bg{
+  
+  background: linear-gradient(to bottom right,  #0f0824, #1f0629, #330435) !important;
+  font-size: 20px;
+}
+.error-gradient-bg{
+  
+  background: linear-gradient(to bottom right,  #420000, #8a0001, #fb0000) !important;
+  font-size: 20px;
+}
+
+

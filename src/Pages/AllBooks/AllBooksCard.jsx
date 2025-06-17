@@ -9,46 +9,30 @@ const AllBooksCard = ({ book }) => {
     quantity,
     author,
     category,
-    //   description,
     rating,
     _id,
-    //content  //--->dynamic rating will be added later
+
   } = book;
 
-  //THIS IS OPTIONAL LWILL BE DELETED SOON
-  // const handleDelete = () => {
-  //   fetch(
-  //     `https://assignment-11-server-five-lake.vercel.app/allBooks-delete/${_id}`,
-  //     {
-  //       method: "DELETE",
-  //     }
-  //   )
-  //     .then((result) => {
-  //       alert("deleted");
-  //       console.log(result);
-  //     })
-  //     .then((error) => {
-  //       console.log(error);
-  //     });
-  // };
-  return (
-    <div className="flex flex-col justify-between h-full p-3 rounded-2xl shadow-2xl bg-gradient-to-br from-[#3e1f91] via-[#121218] to-[#340436]">
 
-      <div className="imgs shadow-xl p-2 border border-blue-300 rounded-xl">
+  return (
+    <div className="flex flex-col justify-between h-full p-3 rounded-2xl shadow-2xl bg-gradient-to-br from-[#fee8f7] via-[#f1e6fd] to-[#e0d4ff]">
+
+      <div className="imgs  p-2 shadow-xl shadow-cyan-200 rounded-xl">
         <img className="w-56 h-56 " src={imageUrl} alt="" />
       </div>
 
-      <div className="cntstn py-3 lg:py-5 space-y-3">
-        <h1 className="text-2xl font-bold text-[#fce6fa]">{title}</h1>
-        <h3 className="font-bold text-white">
+      <div className="cntstn py-3 lg:p-3 space-y-3 mt-3 lg:mt-6">
+        <h1 className="text-2xl font-bold text-black">{title}</h1>
+        <h3 className="font-bold text-black">
           Quantity :{" "}
-          <span className="text-xl font-bold text-cyan-300">{quantity}</span>{" "}
+          <span className="text-2xl font-bold text-cyan-700">{quantity}</span>{" "}
         </h3>
-        <h3 className="font-semibold text-white">
-          Author : <span className=" font-bold text-cyan-300">{author}</span>
+        <h3 className="font-semibold text-black">
+          Author : <span className=" font-bold text-cyan-700">{author}</span>
         </h3>
-        <h3 className="font-semibold text-white">
-          Category :<span className="font-bold text-cyan-300">{category}</span>{" "}
+        <h3 className="font-semibold text-black">
+          Category :<span className="font-bold text-cyan-700">{category}</span>{" "}
         </h3>
       </div>
 
@@ -63,7 +47,7 @@ const AllBooksCard = ({ book }) => {
 
         <Link
           to={`/update-book/${_id}`}
-          className=" bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] hover:from-[#7b1892] hover:to-[#131207] hover:text-white text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+          className=" bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] hover:from-[#d6f0ff] hover:to-[#dbcdff] hover:text-black text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
         >
           Update
         </Link>

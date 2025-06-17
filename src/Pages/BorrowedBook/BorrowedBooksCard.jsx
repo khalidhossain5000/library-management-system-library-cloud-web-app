@@ -34,7 +34,7 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
       .then(() => {})
       .catch((error) => {
         console.log(error);
-        alert("Reutrn error");
+        
       });
 
     //DELETE BORROW BOOK API
@@ -55,6 +55,9 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
             text: "You Returned The Book SuccessFully!Thanks",
             icon: "success",
             theme: "dark",
+            customClass:{
+              popup:'gradient-bg'
+            }
           });
           DeleteBorrowBook(bookId);
         }
@@ -63,24 +66,26 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
         console.log(error);
       });
   };
+ 
   return (
     <div className="container mx-auto">
-      <div className="p-3 rounded-2xl shadow-2xl bg-gradient-to-br from-[#3e1f91] via-[#121218] to-[#340436]">
-        <div className="p-2 rounded-xl" >
+     
+      <div className="p-3 rounded-2xl shadow-2xl bg-gradient-to-br from-[#fee8f7] via-[#f1e6fd] to-[#e0d4ff]">
+        <div className="p-2 rounded-xl mx-auto shadow-xl shadow-cyan-200 " >
       <img className="w-56 h-56 mx-auto " src={imageUrl} alt="" />
       </div>
-        <div className="cntent space-y-6" >
-          <h1 className="text-2xl font-bold text-[#fce6fa]">{title}</h1>
-        <h2 className="font-bold text-white ">
-          Return Date: <span className="text-xl font-bold text-cyan-300">{returnDate}</span>
+        <div className="cntent space-y-6 mt-3 lg:mt-8 p-2" >
+          <h1 className="text-2xl font-bold text-black">{title}</h1>
+        <h2 className="font-bold text-2xl text-black ">
+          Return Date: <span className="text-xl font-bold text-cyan-700">{returnDate}</span>
         </h2>
-        <h3 className="font-bold text-white">Quantity : <span className="text-xl font-bold text-cyan-300">{quantity}</span> </h3>
-      <h3 className="font-semibold text-white">Author : <span className=" font-bold text-cyan-300">{author}</span></h3>
-      <h3 className="font-semibold text-white">Category :<span className="font-bold text-cyan-300">{category}</span> </h3>
+        <h3 className="font-bold text-black">Quantity : <span className="text-xl font-bold text-cyan-700">{quantity}</span> </h3>
+      <h3 className="font-bold text-black">Author : <span className=" font-bold text-cyan-700">{author}</span></h3>
+      <h3 className="font-bold text-black">Category :<span className="font-bold text-cyan-700">{category}</span> </h3>
         </div>
 
         <div className="rtign my-3 flex items-center gap-3">
-          <span className="text-xl font-bold text-cyan-300 ">Rating:</span>
+          <span className="text-xl font-bold text-black ">Rating:</span>
           <Rating
             initialRating={rating}
             emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}

@@ -21,9 +21,9 @@ const AllBooksTable = ({ allBooks, index }) => {
     
       
        
-        <tr className="border-b-1 border-b-pink-600 border-r-1 text-[17px] font-normal">
-          <td className="text-pink-100">{index+1}</td>
-          <td className="border-x-1 border-x-pink-300 text-pink-100">
+        <tr className="border-b-1 border-b-cyan-600 border-r-1 text-[17px] font-normal">
+          <td className="text-black">{index+1}</td>
+          <td className="border-x-1 border-x-cyan-300 text-black">
             <div className="flex items-center gap-3">
               <div className="avatar">
                 <div className="mask rounded-2xl h-12 w-12 lg:w-20 lg:h-20">
@@ -37,11 +37,11 @@ const AllBooksTable = ({ allBooks, index }) => {
               <div></div>
             </div>
           </td>
-          <td className="border-x-1 border-x-pink-300 text-pink-100">{title}</td>
-          <td className="border-x-1 border-x-pink-300 text-pink-100">{quantity}</td>
-          <td className="border-x-1 border-x-pink-300 text-pink-100">{author}</td>
-          <td className="border-x-1 border-x-pink-300 text-pink-100">{category}</td>
-          <td className="border-x-1 border-x-pink-300 text-pink-100"><div className="rtign text-center my-6">
+          <td className="border-x-1 border-x-cyan-300 text-black">{title}</td>
+          <td className="border-x-1 border-x-cyan-300 text-black">{quantity}</td>
+          <td className="border-x-1 border-x-cyan-300 text-black">{author}</td>
+          <td className="border-x-1 border-x-cyan-300 text-black">{category}</td>
+          <td className="border-x-1 border-x-cyan-300 text-black"><div className="rtign text-center my-6">
             <Rating
               initialRating={rating}
               emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}

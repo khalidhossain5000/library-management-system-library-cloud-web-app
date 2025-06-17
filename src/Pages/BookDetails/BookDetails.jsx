@@ -9,19 +9,21 @@ import Swal from "sweetalert2";
 import Modal from "react-modal";
 import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
-import ReactStars from "react-rating-stars-component";
 import { Helmet } from "react-helmet-async";
+import Loading from "../../Components/Loading/Loading";
 
 const BookDetails = () => {
-  // const data = useLoaderData();
+
   const { id } = useParams();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [books, setBooks] = useState([]);
   const [returnDate, setReturnDate] = useState(null);
-
-  const { user } = useAuth();
+  const [detailsLoading,setDetailsLoading]=useState(true)
+  const { user,loading } = useAuth();
   //data loading use effect starts here
   useEffect(() => {
+    setDetailsLoading(true)
+    if(loading) return <Loading/>
     axios(`https://assignment-11-server-five-lake.vercel.app/allBooks/${id}`, {
       headers: {
         authorization: `Bearer ${user?.accessToken}`,
@@ -30,12 +32,15 @@ const BookDetails = () => {
       .then((res) => {
         const data = res.data;
         setBooks(data);
+        setDetailsLoading(false)
       })
       .catch((error) => {
         console.log(error);
+        setDetailsLoading(false)
       });
-  }, [id,user?.accessToken]);
+  }, [id,user?.accessToken,loading]);
   //data loading use effect ends
+  if(detailsLoading) return <Loading/>
   // MODAL RELATED FUNC
   const openModal = () => {
     setModalIsOpen(true);
@@ -99,7 +104,7 @@ const BookDetails = () => {
             style: {
               border: "1px solid black",
               color: "white",
-              backgroundImage: "linear-gradient(to bottom,#16061e, #ef54e2)",
+              backgroundImage: "linear-gradient(to bottom right, #31c3df, #3a47d5)"
             },
           });
         }
@@ -111,9 +116,12 @@ const BookDetails = () => {
         if (error.response?.status === 400) {
           Swal.fire({
             icon: "error",
-            title: "Already Borrowed!",
+            title: "Book is already Borrowed!",
             text: "You have already borrowed this book. Return it first to borrow again.",
             theme: "dark",
+            customClass:{
+              popup:'error-gradient-bg'
+            }
           });
         } else {
           console.log("Borrow error occurred");
@@ -121,6 +129,7 @@ const BookDetails = () => {
         // alert("Borrow book error occured");
       });
   };
+  
   return (
     <div className="py-12 lg:py-24 bg-gradient-to-br from-[#c0e3f7] via-[#dfc7ea] to-[#c0e3f7] ">
       <div className="d-title">
@@ -128,6 +137,7 @@ const BookDetails = () => {
           <title>LibraryCloud | Book-Details</title>
         </Helmet>
       </div>
+      
       <h2 className="text-3xl md:text-6xl font-bold text-[#1F2937] text-center py-6">
         Book Details of : {title}
       </h2>
@@ -162,12 +172,12 @@ const BookDetails = () => {
             Quantity : {quantity}
           </h2>
           <p className="text-3xl font-semibold text-[#1f2937] ">
-            Content of Books : {content}
+            Content of Books : <span className="font-semibold text-xl">{content}</span>
           </p>
           <div className="text-center">
             <button
               onClick={openModal}
-              className="w-9/12 my-6 bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] hover:from-[#7b1892] hover:to-[#131207] hover:text-white text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+              className="w-9/12 my-6 bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] hover:from-[#d6f0ff] hover:to-[#dbcdff] hover:text-black text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer disabled:cursor-not-allowed disabled:bg-red-800 disabled:from-transparent disabled:via-transparent disabled:to-transparent disabled:text-white"
               disabled={quantity <= 0}
             >
               Borrow

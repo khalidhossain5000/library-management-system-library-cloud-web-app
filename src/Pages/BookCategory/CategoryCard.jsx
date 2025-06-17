@@ -12,42 +12,42 @@ const CategoryCard = ({ singleBook }) => {
     author,
     category,
     rating,
-    //    --->dynamic rating will be added later
   } = singleBook;
 
   return (
-    <div className="flex flex-col justify-between h-full p-3 rounded-2xl shadow-2xl bg-gradient-to-br from-[#3e1f91] via-[#121218] to-[#340436]">
+    <div className="flex flex-col justify-between h-full p-3 rounded-2xl shadow-2xl bg-gradient-to-br from-[#fee8f7] via-[#f1e6fd] to-[#e0d4ff]">
     
-          <div className="imgs shadow-xl p-2 border border-blue-300 rounded-xl">
-            <img className="w-56 h-56 " src={imageUrl} alt="" />
+          <div className="imgs shadow-xl p-2 shadow-cyan-200 rounded-xl">
+            <img className="w-56 h-56 mx-auto" src={imageUrl} alt="" />
           </div>
     
-          <div className="cntstn py-3 lg:py-5 space-y-3">
-            <h1 className="text-2xl font-bold text-[#fce6fa]">{title}</h1>
-            <h3 className="font-bold text-white">
+          <div className="cntstn py-3 lg:p-3 space-y-3 mt-3 lg:mt-6">
+            <h1 className="text-2xl font-bold text-black">{title}</h1>
+            <h3 className="font-bold text-black text-xl">
               Quantity :{" "}
-              <span className="text-xl font-bold text-cyan-300">{quantity}</span>{" "}
+              <span className="text-2xl font-bold text-cyan-700">{quantity}</span>{" "}
             </h3>
-            <h3 className="font-semibold text-white">
-              Author : <span className=" font-bold text-cyan-300">{author}</span>
+            <h3 className="font-semibold text-black text-2xl">
+              Author : <span className=" font-bold text-cyan-700">{author}</span>
             </h3>
-            <h3 className="font-semibold text-white">
-              Category :<span className="font-bold text-cyan-300">{category}</span>{" "}
+            <h3 className="font-semibold text-black text-2xl">
+              Category :<span className="font-bold text-cyan-700">{category}</span>{" "}
             </h3>
           </div>
     
           <div className="text-center py-3 lg:py-6 mt-auto rtign space-y-6 lg:space-y-12">
             <Rating
               initialRating={rating}
-              emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
-              fullSymbol={<FaStar className="text-3xl text-yellow-500" />}
+              
+              emptySymbol={<FaRegStar className="text-2xl lg:text-4xl text-yellow-400" />}
+              fullSymbol={<FaStar className="text-2xl lg:text-4xl text-yellow-500" />}
               fractions={2}
               readonly
             />
     
             <Link
               to={`/all-books/${_id}`}
-              className="block bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] hover:from-[#7b1892] hover:to-[#131207] hover:text-white text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+              className="block bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] hover:from-[#d6f0ff] hover:to-[#dbcdff] hover:text-black  text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
             >
               View Details
             </Link>

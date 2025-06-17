@@ -1,6 +1,6 @@
 import React, { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
-import bgImg from "../../assets/AuthBg/new/monutain-darsk.jpg"
+import bgImg from "../../assets/AuthBg/monutain-darsk.jpg"
 import toast from "react-hot-toast";
 import { AuthContext } from "../../Context/AuthContext";
 
@@ -65,8 +65,7 @@ const Register = () => {
           style: {
             border: "1px solid black",
             color: "white",
-            backgroundImage:
-              "linear-gradient(to bottom right,#0d0518,#87d0c3, #600e8c)",
+            backgroundImage: "linear-gradient(to bottom right, #31c3df, #3a47d5)"
           },
         });
         // navigate('/')

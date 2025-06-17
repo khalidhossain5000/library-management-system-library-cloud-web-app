@@ -5,6 +5,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
+import Loading from "../../Components/Loading/Loading";
 
 const UpdateBook = () => {
   const { id } = useParams();
@@ -57,14 +58,20 @@ const UpdateBook = () => {
           title: "Book has been updated successfully",
           icon: "success",
           theme: "dark",
+          customClass:{
+            popup:'gradient-bg'
+          }
         });
       })
       .catch((error) => {
         console.log(error);
       });
   };
+  
+  if(!category) return <Loading/>
   return (
     <div>
+    
       <main
         style={{ backgroundImage: `url(${bgImg})` }}
         className="bg-cover bg-no-repeat py-36 bg-top"
@@ -142,9 +149,9 @@ const UpdateBook = () => {
                     Select Book Category
                   </option>
                   <option className="bg-cyan-900 ">Computer & Programming</option>
-                  <option className="bg-cyan-900 ">Science-Fiction</option>
-                  <option className="bg-cyan-900 ">Sports & Games</option>
-                  <option className="bg-cyan-900 ">Self-Development & Meditation</option>
+                  <option className="bg-cyan-900 " >Science-Fiction</option>
+                  <option className="bg-cyan-900 " >Sports & Games</option>
+                  <option className="bg-cyan-900 " >Self-Development & Meditation</option>
                 </select>
               </fieldset>
               {/* Category */}

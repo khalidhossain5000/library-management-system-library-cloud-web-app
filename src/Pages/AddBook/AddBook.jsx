@@ -37,7 +37,7 @@ const AddBook = () => {
             style: {
               border: "1px solid black",
               color: "white",
-              backgroundImage: "linear-gradient(to bottom,#16061e, #ef54e2)",
+              backgroundImage: "linear-gradient(to bottom right, #31c3df, #3a47d5)"
             },
           });
         }
@@ -46,6 +46,7 @@ const AddBook = () => {
         console.log(error);
       });
   };
+
 
   return (
     <div>
@@ -147,9 +148,9 @@ const AddBook = () => {
                   <option className="bg-cyan-900 ">
                     Computer & Programming
                   </option>
-                  <option className="bg-cyan-900 ">Science-Fiction</option>
-                  <option className="bg-cyan-900 ">Sports & Games</option>
-                  <option className="bg-cyan-900 ">
+                  <option className="bg-cyan-900 " >Science-Fiction</option>
+                  <option className="bg-cyan-900 " >Sports & Games</option>
+                  <option className="bg-cyan-900" >
                     Self-Development & Meditation
                   </option>
                 </select>

@@ -20,8 +20,7 @@ const NavBar = () => {
             style: {
               border: "1px solid black",
               color: "white",
-              backgroundImage:
-                "linear-gradient(to bottom right,#4B5563,#9333EA, #3B82F6)",
+              backgroundImage: "linear-gradient(to bottom right, #31c3df, #3a47d5)"
             },
           });
       })

@@ -29,8 +29,7 @@ export const router = createBrowserRouter([
             <AllBooks></AllBooks>
           </PrivateRoute>
         ),
-        // loader:()=>fetch('https://assignment-11-server-five-lake.vercel.app/allBooks'),
-        // hydrateFallbackElement:<Loading/>
+        
       },
       {
         path: "all-books/:id",
@@ -39,8 +38,7 @@ export const router = createBrowserRouter([
             <BookDetails></BookDetails>
           </PrivateRoute>
         ),
-        // loader:({params})=>fetch(`https://assignment-11-server-five-lake.vercel.app/allBooks/${params.id}`),
-        // hydrateFallbackElement:<Loading/>
+        
       },
       {
         path: "update-book/:id",
@@ -49,8 +47,7 @@ export const router = createBrowserRouter([
             <UpdateBook></UpdateBook>
           </PrivateRoute>
         ),
-        // loader:({params})=>fetch(`https://assignment-11-server-five-lake.vercel.app/allBooks/${params.id}`),
-        // hydrateFallbackElement:<Loading/>
+        
       },
       {
         path: "add-books",
@@ -68,7 +65,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
 
-        hydrateFallbackElement: <Loading />,
+       
       },
       {
         path: "book-categories/:name",
