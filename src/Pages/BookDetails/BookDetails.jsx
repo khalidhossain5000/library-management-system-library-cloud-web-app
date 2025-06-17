@@ -238,7 +238,7 @@ const BookDetails = () => {
           onClick={handleBorrowBook}
           type="submit"
           value="Submit"
-           className="w-9/12 bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] hover:from-[#7b1892] hover:to-[#131207] hover:text-white text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+           className="w-9/12 bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] hover:from-[#d6f0ff] hover:to-[#dbcdff] hover:text-black text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer disabled:cursor-not-allowed disabled:bg-red-800 disabled:from-transparent disabled:via-transparent disabled:to-transparent disabled:text-white"
         />
         </div>
         
