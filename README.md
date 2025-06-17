@@ -2,19 +2,18 @@
 
 ## Descriptions:
 
-A well-renowned school requires the development of a Library Management System, accessible via a website. The system should allow the addition and categorization of books in their collection, with the ability to update book information. It should also support tracking of borrowed and returned books, ensuring efficient management of all transactions. The website should offer a user-friendly interface for users, facilitating smooth operations and easy access to the library's resources. 
+A well-renowned school requires the development of a Library Management System, accessible via a website. The system should allow the addition and categorization of books in their collection, with the ability to update book information. It should also support tracking of borrowed and returned books, ensuring efficient management of all transactions. The website should offer a user-friendly interface for users, facilitating smooth operations and easy access to the library's resources.
 
+### Purpose :
 
-### Purpose : 
-    The purpose of this website is to simplify of managing books,
-    users.Keep data about all the books and users also keeping the 
-    data about borrowed books by users.It provides the librians 
-    and users a easy-to-use interface for tracking books,issueing 
-    books , and record data about it.
-
-
+The purpose of this website is to simplify of managing books,
+users.Keep data about all the books and users also keeping the
+data about borrowed books by users.It provides the librians
+and users a easy-to-use interface for tracking books,issueing
+books , and record data about it.
 
 ##🚀🚀 Project Live Url : https://assignment-11-library-cloud-app.netlify.app/
+
 # Features
 
 - Storing and managing Data in MongoDB.
@@ -29,11 +28,10 @@ A well-renowned school requires the development of a Library Management System, 
 - Secured api using Token system.
 - Aweosme Interface.
 
-
-
 ## Npm Packages -
 
 **Client:**
+
 - React
 - React-Router
 - TailwindCss
@@ -49,15 +47,14 @@ A well-renowned school requires the development of a Library Management System, 
 - react-rating
 - react-spinners
 - sweetalert2
-- swiper 
+- swiper
 - React Helment async
 
-
 **Server:**
+
 - Node-Js.
 - cors
 - dotenv
 - express
 - firebase-admin
 - mongodb
-
