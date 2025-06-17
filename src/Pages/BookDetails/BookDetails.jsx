@@ -177,7 +177,7 @@ const BookDetails = () => {
       </div>
 
       {/* modal start */}
-gi
+
       <Modal
         isOpen={modalIsOpen}
         // onAfterOpen={afterOpenModal}
@@ -185,7 +185,7 @@ gi
         // style={customStyles}
         contentLabel="Example Modal"
         overlayClassName="fixed inset-0 bg-black/30 flex justify-center items-center"
-        className="m-2 lg:m-0 lg:w-8/12 bg-gradient-to-br from-[#dfd4ff] via-[#ab8ef6] to-[#fdeaf7] lg:h-6/12 p-6 lg:p-12 rounded-xl shadow-2xl relative"
+        className="m-2 lg:m-0 lg:w-8/12 bg-gradient-to-br from-[#dfd4ff] via-[#ab8ef6] to-[#fdeaf7] lg:h-8/12 p-6 lg:p-12 rounded-xl shadow-2xl relative"
       >
         <h1 className="md:text-3xl lg:text-5xl font-bold text-[#1f2937] text-center">
           Select A Return Date To Borrow A Book

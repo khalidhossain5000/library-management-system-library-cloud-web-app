@@ -15,7 +15,7 @@ const Testimonial = () => {
     <div className="py-24 relative">
 
       <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] ">
-        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#d5c5ff,transparent)]"></div>
+        <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#d5c5ff,transparent)]"></div>
       </div>
 
     
@@ -66,12 +66,12 @@ const Testimonial = () => {
               rotateY: [0, 5, -5, 0],
               backgroundColor: [
                 "#0e7566",
-                "[#b116e0]",
-                "[#101203]",
                 "#262c33",
+                "#b116e0",
+                "#101203",
                 "#1c073a",
-                "#59113e",
                 "#163349",
+                "#59113e",
                 "#0e7566",
               ],
             }}

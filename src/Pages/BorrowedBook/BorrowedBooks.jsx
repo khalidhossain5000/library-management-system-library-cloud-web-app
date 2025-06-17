@@ -3,13 +3,16 @@ import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import BorrowedBooksCard from "./BorrowedBooksCard";
 import { Helmet } from "react-helmet-async";
+import Loading from "../../Components/Loading/Loading";
 
 const BorrowedBooks = () => {
   //{borrowBookData.length}
   const [borrowedBooks, setBorrowedBooks] = useState([]);
 
-  const { user } = useAuth();
+  const { user,loading } = useAuth();
+  console.log(loading);
   useEffect(() => {
+    if(loading) return <Loading/>
     axios(
       `https://assignment-11-server-five-lake.vercel.app/borrowed-books/${user?.email}`,
       {

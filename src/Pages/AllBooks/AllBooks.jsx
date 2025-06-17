@@ -4,15 +4,19 @@ import AllBooksTable from "./AllBooksTable";
 import axios from "axios";
 import useAuth from "../../Hooks/useAuth";
 import { Helmet } from "react-helmet-async";
+import Loading from "../../Components/Loading/Loading";
 
 const AllBooks = () => {
-  // const allBooks = useLoaderData();
+
+    
   const [allBooks, setAllBooks] = useState([]);
-  // const [filterBooks, setFilterBooks] = useState(allBooks);
+  
   const [view, setView] = useState("card");
 
-  const { user } = useAuth();
+  const { user,loading } = useAuth();
+  
   useEffect(() => {
+    if(loading) return <Loading/>
     axios("https://assignment-11-server-five-lake.vercel.app/allBooks", {
       headers: {
         authorization: `Bearer ${user?.accessToken}`,
@@ -25,8 +29,9 @@ const AllBooks = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [user?.accessToken]);
+  }, [user?.accessToken,loading]);
 
+  
   const handleFilterBooks = () => {
     
     const availableBooks = allBooks.filter((books) => books.quantity > 0);
@@ -40,7 +45,7 @@ const AllBooks = () => {
               </Helmet>
             </div>
       <div className="absolute top-0 -z-10 h-full w-full bg-white">
-        <div class="absolute bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px]"></div>
+        <div className="absolute bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px]"></div>
       </div>
 
       <h2 className=" text-6xl font-bold text-center text-[#1F2937]">
