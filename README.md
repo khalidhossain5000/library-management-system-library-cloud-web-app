@@ -12,7 +12,7 @@ data about borrowed books by users.It provides the librians
 and users a easy-to-use interface for tracking books,issueing
 books , and record data about it.
 
-## 🚀🚀 Project Live Url : https://assignment-11-library-cloud-app.netlify.app/
+## 🚀🚀 Project Live Url : https://library-cloud.netlify.app/
 
 # Features
 
